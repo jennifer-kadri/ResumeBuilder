@@ -1,13 +1,33 @@
-.container {
-   width: 100%;
-   padding: 30px;
-   text-align: center;
+.header {
+   &.container {
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+      width: 100%;
+      gap: 30px;
+      padding: 6rem 30px;
+      background-color: rgb(238, 252, 255);
 
-   .heading {
-      background-color: blueviolet;
-      background-clip: text;
-      color: transparent;
-      font-size: 3rem;
-      font-weight: bold;
+      .heading {
+         margin: 0 auto;
+         max-width: 500px;
+         color: $dark;
+         font-size: 3.1rem;
+         font-weight: bold;
+         line-height: 4.1rem;
+         letter-spacing: 1px;
+         
+         span {
+            background-clip: text;
+            background-image: linear-gradient(to right, #239ce2, #1369b9);
+            color: transparent;
+         }
+      }
+      
+      .right {
+         img {
+            width: 400px;
+         }
+      }
    }
 }

@@ -1,0 +1,48 @@
+.body {
+   &.container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      gap: 30px;
+      padding: 30px;
+
+      .heading {
+         font-weight: bold;
+         font-size: 2.1rem;
+      }
+
+      .toolbar {
+         width: 100%;
+         display: flex;
+         gap: 40px;
+         justify-content: space-between;
+         align-items: center;
+
+         button {
+            padding: 8px 16px;
+            border-radius: 5px;
+            background-color: #239ce2;
+            color: $light;
+            outline: none;
+            border: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 1px;
+         }
+      }
+
+      .colors {
+         display: flex;
+         gap: 20px;
+         padding: 0 30px;
+
+         .color {
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            background-color: #239ce2;
+         }
+      }
+   }
+}

@@ -3,7 +3,9 @@ import Routes from "./pages/Routes";
 
 const App= () => {
   return (
-    <Routes />
+    <div className="App">
+      <Routes />
+    </div>
   );
 }
 
