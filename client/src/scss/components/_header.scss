@@ -19,7 +19,7 @@
          
          span {
             background-clip: text;
-            background-image: linear-gradient(to right, #239ce2, #1369b9);
+            background-image: linear-gradient(to right, $primary, $accent);
             color: transparent;
          }
       }
