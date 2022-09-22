@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+.container .heading {
+  background-color: blueviolet;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  font-size: 3rem;
+  font-weight: bold;
+}/*# sourceMappingURL=styles.css.map */
