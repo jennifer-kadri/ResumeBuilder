@@ -32,7 +32,7 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use(qbRoutes);
 
-/** CONNEXION TO LOCALHOST */
+/** CONNEXION TO LOCALHOST **/
 const colors = require("./assets/colors");
 const join = require("path");
 const port = process.env.PORT;
