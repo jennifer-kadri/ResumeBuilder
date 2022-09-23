@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import InputControl from './InputControl';
+import WorkExpData from './WorkExpData';
 
 const Editor = (props) => {
 
@@ -14,6 +15,37 @@ const Editor = (props) => {
             <InputControl 
                label="Title"
                placeholder="Enter title eg. Frontend Developer"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Company Name"
+               placeholder="Enter company name eg. YoungTechBusiness"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Certificate Link"
+               placeholder="Enter certificate link"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Location"
+               placeholder="Enter location eg. Remote"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Start Date"
+               type="date"
+               placeholder="Enter start date of work"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Location"
+               placeholder="Enter location eg. Remote"
             />
          </div>
       </div>
