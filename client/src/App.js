@@ -1,11 +1,12 @@
 import React from "react";
-import Routes from "./pages/Routes";
+import { BrowserRouter as Router } from 'react-router-dom'
+import Pages from "./pages/Routes";
 
 const App= () => {
   return (
-    <div className="App">
-      <Routes />
-    </div>
+    <Router className="App">
+      <Pages />
+    </Router>
   );
 }
 
