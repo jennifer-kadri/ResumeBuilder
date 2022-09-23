@@ -4,9 +4,9 @@ import { ToastContainer, toast } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
 import axios from 'axios'
 import Logo from '../assets/sakura.png'
-import { registerRoute } from '../utils/APIRoutes'
+import { loginRoute } from '../utils/APIRoutes'
 import { 
-   RegisterSection,
+   LoginSection,
    FormContainer,
    Form,
    Brand,
@@ -19,12 +19,11 @@ import {
    Space
 } from '../components/StyledElements'
 
-const Register = () => {
+const Login = () => {
    const navigate = useNavigate();
    const [values, setValues] = useState({
       email: "",
       password: "",
-      confirmPassword: "",
    });
 
    const toastOptions = {
@@ -44,8 +43,8 @@ const Register = () => {
    const handleSubmit = async (e) => {
       e.preventDefault();
       if (handleValidation()) {
-         const { email, password } = values;
-         const { data } = await axios.post(registerRoute, {
+         const { password } = values;
+         const { data } = await axios.post(loginRoute, {
             email,
             password, 
          });
@@ -60,28 +59,16 @@ const Register = () => {
    };
 
    const handleValidation = () => {
-      const { password, confirmPassword, email } = values;
-      if (password !== confirmPassword) {
+      const { password, email } = values;
+      if (password === "") {
          toast.error(
-            "The password and confirm password do not match", 
+            "The password is required", 
             toastOptions
         ); 
          return false;
-      } else if (password.length < 8) {
+      } else if (email.length === "" ) {
          toast.error(
-            "Password should be at least 8 characters", 
-            toastOptions 
-        );
-         return false;
-      } else if (password.length > 24) {
-         toast.error(
-            "Password should not exceed 24 characters", 
-            toastOptions 
-        );
-         return false;
-      } else if (email === "") {
-         toast.error(
-            "The email is required",
+            "The email is required", 
             toastOptions 
         );
          return false;
@@ -95,7 +82,7 @@ const Register = () => {
 
    return (
       <>
-         <RegisterSection id="register-section">
+         <LoginSection id="login-section">
             <FormContainer className="form container">
                <Form onSubmit={(e) => handleSubmit(e)}>
                   <Brand className="brand">
@@ -103,11 +90,12 @@ const Register = () => {
                      <BrandName>Resume Builder</BrandName>
                   </Brand>
                   <Input 
-                     type="email" 
+                     type="text" 
                      placeholder="Email" 
-                     name="email"
+                     name="email" 
                      autoComplete="off" 
                      onChange={(e) => handleChange(e)}
+                     min="3"
                      />
                   <Input 
                      type="password" 
@@ -115,26 +103,20 @@ const Register = () => {
                      name="password" 
                      onChange={(e) => handleChange(e)}
                      />
-                  <Input 
-                     type="password" 
-                     placeholder="Confirm Password" 
-                     name="confirmPassword" 
-                     onChange={(e) => handleChange(e)}
-                  />
-                  <Button type="submit">Create User</Button>
+                  <Button type="submit">Log In</Button>
                   <Account className="account">
                      <Span>
-                        Already have an account ? 
+                        Don't have an account ? 
                         <Space></Space>
-                        <Link to="/login"> Log In</Link>
+                        <Link to="/register"> Register</Link>
                      </Span>
                   </Account>
                </Form>
             </FormContainer>
             <ToastContainer />
-         </RegisterSection>
+         </LoginSection>
       </>
   )
 }
 
-export default Register
+export default Login
