@@ -107,16 +107,16 @@ const Login = () => {
   )
 }
 
-export const LoginSection = styled.section``
-export const FormContainer = styled.div``
-export const Form = styled.form``
-export const Brand = styled.div``
-export const BrandLogo = styled.img``
-export const BrandName = styled.h1``
-export const Input = styled.input``
-export const Button = styled.button``
-export const Account = styled.div``
-export const Span = styled.span``
-export const Space = styled.br``
+const LoginSection = styled.section``
+const FormContainer = styled.div``
+const Form = styled.form``
+const Brand = styled.div``
+const BrandLogo = styled.img``
+const BrandName = styled.h1``
+const Input = styled.input``
+const Button = styled.button``
+const Account = styled.div``
+const Span = styled.span``
+const Space = styled.br``
 
 export default Login
