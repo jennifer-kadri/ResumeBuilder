@@ -1,11 +1,14 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const cors = require('cors');
+const cors = require("cors");
+const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const server = require("http").createServer(app);
 const dotenv = require("dotenv").config();
+const morgan = require("morgan");
+const qbRoutes = require("./app/routes/routes");
 
-var parth = require("path");
+var path = require("path");
 var bcrypt = require("bcryptjs");
 
 app.use(cors({
@@ -19,10 +22,15 @@ app.use(fileUpload({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.raw());
+app.use(bodyParser.text());
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/public", express.static(path.join(__dirname, "public")));
+
+app.use(qbRoutes);
 
 /** CONNEXION TO LOCALHOST */
 const colors = require("./assets/colors");

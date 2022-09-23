@@ -1,7 +1,28 @@
 const { register, login, setAvatar, getAllUsers } = require("../controllers/userController");
-const router = require("express").Router();
+const Router = require("express").Router();
+const mysqlConn = require("../config/database");
 
-router.post("/register", register);
-router.post("/login", login);
+Router.get("/", (req, res) => {})
+Router.post("/register", register);
+Router.post("/login", login);
 
-module.exports = router;
+Router.post("/", (req, res) => {
+   let qb = req.body;
+   const sql = 
+      "SET @id = ?; SET @email: SET @password;";
+   mysqlConn.query(
+      sql,
+      [
+         qb.id,
+         qb.email,
+         qb.password,
+      ],
+      (err, resulsts, fields) => {
+         if (!err) {
+            res.type('json')
+         }
+      }
+   )
+})
+
+module.exports = Router;
