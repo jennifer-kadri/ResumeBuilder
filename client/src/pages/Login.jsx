@@ -3,21 +3,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
 import axios from 'axios'
+import styled from "styled-components";
 import Logo from '../assets/resume-folder.svg'
 import { loginRoute } from '../utils/APIRoutes'
-import { 
-   LoginSection,
-   FormContainer,
-   Form,
-   Brand,
-   BrandLogo,
-   BrandName,
-   Input,
-   Button,
-   Account,
-   Span,
-   Space
-} from '../components/StyledElements'
 
 const Login = () => {
    const navigate = useNavigate();
@@ -118,5 +106,17 @@ const Login = () => {
       </>
   )
 }
+
+export const LoginSection = styled.section``
+export const FormContainer = styled.div``
+export const Form = styled.form``
+export const Brand = styled.div``
+export const BrandLogo = styled.img``
+export const BrandName = styled.h1``
+export const Input = styled.input``
+export const Button = styled.button``
+export const Account = styled.div``
+export const Span = styled.span``
+export const Space = styled.br``
 
 export default Login
