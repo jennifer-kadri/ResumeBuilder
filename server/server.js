@@ -6,13 +6,14 @@ const fileUpload = require("express-fileupload");
 const server = require("http").createServer(app);
 const dotenv = require("dotenv").config();
 const morgan = require("morgan");
-const qbRoutes = require("./app/routes/routes");
+const userRoutes = require("./app/routes/routes");
 
 var path = require("path");
 var bcrypt = require("bcryptjs");
 
 app.use(cors({
    origin: "http://localhost:3000",
+   methods: ["GET", "POST", "PUT", "DELETE"],
    credentials: true
 }));
 
@@ -30,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/public", express.static(path.join(__dirname, "public")));
 
-app.use(qbRoutes);
+app.use("api/auth", userRoutes);
 
 /** CONNEXION TO LOCALHOST **/
 const colors = require("./assets/colors");
