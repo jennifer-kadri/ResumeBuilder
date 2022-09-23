@@ -33,7 +33,6 @@ const Login = () => {
       if (handleValidation()) {
          const { password } = values;
          const { data } = await axios.post(loginRoute, {
-            email,
             password, 
          });
          if (data.status === false) {
