@@ -1,8 +1,7 @@
-const { register, login, setAvatar, getAllUsers } = require("../controllers/userController");
 const Router = require("express").Router();
 const mysqlConn = require("../config/database");
+const { register, login } = require("../controllers/userController");
 
-Router.get("/", (req, res) => {})
 Router.post("/register", register);
 Router.post("/login", login);
 
@@ -17,7 +16,7 @@ Router.post("/", (req, res) => {
          qb.email,
          qb.password,
       ],
-      (err, resulsts, fields) => {
+      (err, results, fields) => {
          if (!err) {
             res.type('json')
          }
