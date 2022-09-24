@@ -40,6 +40,11 @@
 				
 				.hide {
 					display: none;
+					.icon {
+						&:hover {
+							color: $primary;
+						}
+					}
 				}
 				.create, .signup, .signin {
 					color: $light;
@@ -68,6 +73,10 @@
 					.create, .signup, .signin {
 						display: none;
 					}
+					gap: 1.5rem;
+					padding: 0;
+				}
+				@media screen and (max-width: 500px) {
 					gap: 1rem;
 					padding: 0;
 				}

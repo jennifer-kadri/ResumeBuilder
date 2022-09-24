@@ -345,6 +345,9 @@ li {
 #navbar-main #navbar #navbelt .auth .hide {
   display: none;
 }
+#navbar-main #navbar #navbelt .auth .hide .icon:hover {
+  color: rgb(35, 156, 226);
+}
 #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {
   color: rgb(255, 255, 255);
   padding: 6px 12px;
@@ -362,7 +365,7 @@ li {
 }
 @media screen and (max-width: 680px) {
   #navbar-main #navbar #navbelt .auth {
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 0;
   }
   #navbar-main #navbar #navbelt .auth .hide {
@@ -373,6 +376,12 @@ li {
   }
   #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {
     display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  #navbar-main #navbar #navbelt .auth {
+    gap: 1rem;
+    padding: 0;
   }
 }
 @media screen and (max-width: 680px) {
