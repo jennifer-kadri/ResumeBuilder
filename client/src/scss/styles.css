@@ -308,29 +308,19 @@ li {
 #navbar-main #navbar .top-nav #logo {
   font-size: 1rem;
 }
-@media screen and (min-width: 800px) {
-  #navbar-main #navbar .top-nav {
-    display: none;
-  }
-}
 #navbar-main #navbar #navbelt {
   align-items: center;
   display: flex;
   height: 70px;
-  background-color: rgb(187, 225, 247);
+  background-color: rgb(96, 177, 224);
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 2rem;
   position: fixed;
   top: 0;
   z-index: 9999;
   width: 100%;
   color: rgb(255, 255, 255);
-}
-@media screen and (max-width: 800px) {
-  #navbar-main #navbar #navbelt {
-    top: 26px;
-  }
 }
 #navbar-main #navbar #navbelt .brand #logo {
   color: rgb(255, 255, 255);
@@ -338,6 +328,7 @@ li {
   font-size: 1.6rem;
 }
 #navbar-main #navbar #navbelt .auth {
+  font-size: 1.1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -356,39 +347,4 @@ li {
   background-color: rgba(167, 202, 230, 0.9098039216);
   padding: 0 4px;
   border-radius: 4px;
-}
-#navbar-main #navbar #navbelt .cart-icon {
-  stroke: rgb(255, 255, 255);
-  stroke-width: 2;
-  height: 3.8rem !important;
-}
-@media screen and (min-width: 1424px) {
-  #navbar-main #navbar #navbelt {
-    padding: 0 8rem;
-  }
-}
-@media screen and (max-width: 1260px) {
-  #navbar-main #navbar #navbelt {
-    padding: 1rem;
-  }
-  #navbar-main #navbar #navbelt .auth-msg {
-    display: none;
-  }
-  #navbar-main #navbar #navbelt .search__container {
-    width: 60%;
-  }
-  #navbar-main #navbar #navbelt .search__container #categories h3 {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 800px) {
-  #navbar-main #navbar #navbelt {
-    padding: 0;
-  }
-  #navbar-main #navbar #navbelt .brand, #navbar-main #navbar #navbelt .auth, #navbar-main #navbar #navbelt .cart-icon {
-    display: none;
-  }
-  #navbar-main #navbar #navbelt .search__container {
-    width: 75%;
-  }
 }/*# sourceMappingURL=styles.css.map */
