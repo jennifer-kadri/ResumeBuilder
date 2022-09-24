@@ -8,7 +8,6 @@ import { Link, useLocation } from "react-router-dom"
 const Home = () => {
    return (
       <>
-         <NavBar /> 
          <Header />
          <Main className="body container">
             <Link to="/signup" className="heading">Create your resume</Link>
