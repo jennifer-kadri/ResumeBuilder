@@ -343,6 +343,9 @@ li {
   padding: 0 1rem;
   gap: 1rem;
 }
+#navbar-main #navbar #navbelt .auth .hidden {
+  display: hidden;
+}
 #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {
   color: rgb(255, 255, 255);
   padding: 6px 12px;
@@ -363,6 +366,9 @@ li {
     display: none;
     padding: 0;
     gap: 0;
+  }
+  #navbar-main #navbar #navbelt .auth .hidden {
+    display: block;
   }
 }
 @media screen and (max-width: 680px) {
