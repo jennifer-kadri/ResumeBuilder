@@ -140,11 +140,13 @@ li {
   justify-content: space-evenly;
   text-align: center;
   width: 100%;
-  gap: 30px;
-  padding: 6rem 30px;
+  padding: 4rem 30px;
   background-color: rgb(238, 252, 255);
 }
-.header.container .heading {
+.header.container .left {
+  padding-top: 2.5rem;
+}
+.header.container .left .heading {
   padding-top: 1rem;
   margin: 0 auto;
   max-width: 500px;
@@ -155,7 +157,7 @@ li {
   letter-spacing: 1px;
   text-shadow: 1px 0.1rem rgb(187, 225, 247);
 }
-.header.container .heading span {
+.header.container .left .heading span {
   -webkit-background-clip: text;
           background-clip: text;
   background-image: linear-gradient(to right, rgb(35, 156, 226), rgb(19, 105, 185), rgb(19, 105, 185), rgb(35, 156, 226));
@@ -163,7 +165,7 @@ li {
   text-shadow: none;
 }
 .header.container .right img {
-  width: 500px;
+  width: 440px;
 }
 
 .body.container {
