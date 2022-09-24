@@ -178,13 +178,21 @@ li {
   margin: 0 auto;
 }
 .body.container .heading {
+  color: rgb(255, 255, 255);
+  background-color: rgb(96, 177, 224);
+  text-transform: uppercase;
   padding: 0.8rem 3.3rem;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.7rem;
   border-radius: 6px;
-  background-color: rgb(187, 225, 247);
-  text-shadow: 1px 1px 1px rgb(255, 255, 255);
+  transition: all 600ms ease;
   cursor: pointer;
+  border: 2px solid transparent;
+}
+.body.container .heading:hover {
+  color: rgb(35, 156, 226);
+  background-color: rgba(187, 225, 247, 0.4);
+  border: 2px solid rgb(35, 156, 226);
 }
 
 .editor.container {

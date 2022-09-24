@@ -48,13 +48,22 @@
       margin: 0 auto;
 
          .heading {
+            color: $light;
+            background-color: $blue;
+            text-transform: uppercase;
             padding: 0.8rem 3.3rem;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 1.7rem;
             border-radius: 6px;
-            background-color: $light-blue;
-            text-shadow: 1px 1px 1px $light;
+            transition: $transition-slow;
             cursor: pointer;
+            border: 2px solid transparent;
+            
+            &:hover {
+               color: $primary;
+               background-color: rgb($light-blue, 0.4);
+               border: 2px solid $primary;
+            }
       }
    }
 }
