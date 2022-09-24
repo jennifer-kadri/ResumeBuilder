@@ -13,7 +13,6 @@ const Home = () => {
          <Main className="body container">
             <Link to="/signup" className="heading">Try it now</Link>
          </Main>
-         {/* <Body /> */}
       </> 
    )  
 }
