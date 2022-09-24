@@ -39,10 +39,12 @@ const Navbar = () => {
             </Brand>
 
             <Div className="auth">
-              <Small className="auth-msg">
+              <Button className="auth-btn">
                 <Link to="/login" className="signin">Log In</Link>
+              </Button>
+              <Button className="auth-btn">
                 <Link to="/signup" className="signup">Sign Up</Link>
-              </Small>
+              </Button>
             </Div>
           </HeroWrapper>
         </Container>
@@ -56,6 +58,6 @@ const Container = styled.div``
 const HeroWrapper = styled.div``
 const Div = styled.div``
 const Brand = styled.h1`font-size: 1.4rem;`
-const Small = styled.small`word-break: break-word;`
+const Button = styled.small`word-break: break-word;`
 
 export default Navbar
