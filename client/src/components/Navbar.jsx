@@ -40,27 +40,11 @@ const Navbar = () => {
 
             <Div className="auth">
               <Small className="auth-msg">
-                Bienvenue,  <Link to="/login" className="signin">connectez-vous</Link>
-                <br></br> ou bien <Link to="/signup" className="signup">créez un compte</Link>
+                <Link to="/login" className="signin">Log In</Link>
+                <Link to="/signup" className="signup">Sign Up</Link>
               </Small>
-              {/* <Profile className="profile-icon" /> */}
             </Div>
           </HeroWrapper>
-
-            <Hyperlinks className="navlink mg-auto">
-              <Links id="nav__links" className={"nav-links-MobileMenu"} >
-                <Li id="li" className="account">
-                  <Link
-                    to="/profil"
-                    onClick={() => setActiveNav("/profil")}
-                    className={activeNav === "/profil" ? "active" : ""}
-                  >
-                    <Span className="text">Compte</Span>
-                    {/* <User className="small-nav-icon account" /> */}
-                  </Link>
-                </Li>
-              </Links>
-            </Hyperlinks>
         </Container>
       </NavBar>
     </>
@@ -72,10 +56,6 @@ const Container = styled.div``
 const HeroWrapper = styled.div``
 const Div = styled.div``
 const Brand = styled.h1`font-size: 1.4rem;`
-const Span = styled.span``
 const Small = styled.small`word-break: break-word;`
-const Hyperlinks = styled.div``
-const Links = styled.ul``
-const Li = styled.li``
 
 export default Navbar
