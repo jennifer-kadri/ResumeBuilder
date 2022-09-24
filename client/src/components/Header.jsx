@@ -1,5 +1,5 @@
 import React from 'react'
-import folderSvg from '../assets/resume-folder.svg'
+import Resume from '../assets/cv.svg'
 
 const Header = () => {
   return (
@@ -15,7 +15,7 @@ const Header = () => {
          </p> 
       </div>
       <div className="right">
-         <img src={folderSvg} alt="Resume" />
+         <img src={Resume} alt="Resume" />
       </div>
     </div>
   )  
