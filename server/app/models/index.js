@@ -20,6 +20,8 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.user = require("./userModel.js") (sequelize, Sequelize);
+db.refreshToken = require("./auth/refreshToken.model.js")(sequelize, Sequelize);
+
 
 db.refreshToken.belongsTo(db.user, {
   foreignKey: "userId",
