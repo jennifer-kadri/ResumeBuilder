@@ -362,16 +362,18 @@ li {
   border-radius: 4px;
 }
 @media screen and (max-width: 680px) {
+  #navbar-main #navbar #navbelt .auth {
+    gap: 0.7rem;
+    padding: 0;
+  }
   #navbar-main #navbar #navbelt .auth .hide {
     display: block;
   }
-  #navbar-main #navbar #navbelt .auth .hide .user, #navbar-main #navbar #navbelt .auth .hide .create {
+  #navbar-main #navbar #navbelt .auth .hide .icon {
     color: rgb(255, 255, 255);
   }
   #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {
     display: none;
-    padding: 0;
-    gap: 0;
   }
 }
 @media screen and (max-width: 680px) {

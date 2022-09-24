@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { API_BASE_URL } from "../config";
 import styled from "styled-components";
-import { User, Feather } from "react-feather";
+import { User, Feather, LogOut } from "react-feather";
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -39,10 +39,10 @@ const Navbar = () => {
 
               <Div className="auth">
                 <Button className="hide btn">
-                  <Link to="/create" className="create"><Feather /></Link>
+                  <Link to="/create" className="icon"><Feather /></Link>
                 </Button>
                 <Button className="btn">
-                  <Link to="/create" className="icon">Create Resume</Link> 
+                  <Link to="/create" className="create">Create Resume</Link> 
                 </Button>
               {!isLoggedIn && (
                 <>
@@ -56,6 +56,13 @@ const Navbar = () => {
                   </Button>
                   <Button className="btn">
                     <Link to="/signup" className="signup">Signup</Link>
+                  </Button>
+                </>
+              )}
+              {isLoggedIn && (
+                <>
+                  <Button className="hide btn">
+                    <Link to="/signup" className="icon"><LogOut /></Link>
                   </Button>
                 </>
               )}

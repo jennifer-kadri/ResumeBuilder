@@ -62,15 +62,15 @@
 				@media screen and (max-width: 680px) {
 					.hide {
 						display: block;
-						.user, .create {
+						.icon {
 							color: $light;
 						}
 					}
 					.create, .signup, .signin {
 						display: none;
-						padding: 0;
-						gap: 0;
 					}
+					gap: 0.7rem;
+					padding: 0;
 				}
 			}
 			@media screen and (max-width: 680px) {
