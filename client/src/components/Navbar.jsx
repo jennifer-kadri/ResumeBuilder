@@ -41,7 +41,7 @@ const Navbar = () => {
             {!isLoggedIn && (
               <Div className="auth">
                 <Button className="btn">
-                  <Link to="/make-resume" className="make">Create Resume</Link> 
+                  <Link to="/make-resume" className="create">Create Resume</Link> 
                 </Button>
               <Button className="btn">
                 <Link to="/login" className="signin">Login</Link>
