@@ -13,3 +13,17 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     idle: dbConfig.pool.idle
   }
 });
+
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.user = require("./userModel.js") (sequelize, Sequelize);
+
+db.user.hasOne({
+  foreignKey: "userId",
+  targetKey: "id"
+});
+
+module.exports = db;
