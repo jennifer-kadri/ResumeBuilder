@@ -340,7 +340,7 @@ li {
   padding: 4px 12px;
   font-size: 1.1rem;
   font-weight: 500;
-  transition: all 400ms ease;
+  transition: all 600ms ease;
   text-transform: uppercase;
 }
 #navbar-main #navbar #navbelt .auth .signin:hover, #navbar-main #navbar #navbelt .auth .signup:hover {
