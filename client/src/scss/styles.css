@@ -156,7 +156,7 @@ li {
 .header.container .heading span {
   -webkit-background-clip: text;
           background-clip: text;
-  background-image: linear-gradient(to right, --primary, --accent);
+  background-image: linear-gradient(to right, rgb(35, 156, 226), rgb(19, 105, 185));
   color: transparent;
 }
 .header.container .right img {
