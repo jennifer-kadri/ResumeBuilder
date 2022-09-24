@@ -135,6 +135,39 @@ li {
   text-transform: capitalize;
 }
 
+.header.container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  padding: 6rem 30px 2rem 30px;
+  background-color: rgb(238, 252, 255);
+}
+.header.container .left {
+  padding-top: 2.5rem;
+}
+.header.container .left .heading {
+  padding-top: 1rem;
+  margin: 0 auto;
+  max-width: 500px;
+  color: rgb(0, 0, 0);
+  font-size: 3.1rem;
+  font-weight: bold;
+  line-height: 4.1rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 0.1rem rgb(187, 225, 247);
+}
+.header.container .left .heading span {
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-image: linear-gradient(to right, rgb(35, 156, 226), rgb(19, 105, 185), rgb(19, 105, 185), rgb(35, 156, 226));
+  color: transparent;
+  text-shadow: none;
+}
+.header.container .right img {
+  width: 440px;
+}
+
 .body.container {
   height: 35vh;
   display: flex;

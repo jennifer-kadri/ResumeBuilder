@@ -1,3 +1,42 @@
+.header {
+   &.container {
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+      width: 100%;
+      padding: 6rem 30px 2rem 30px;
+      background-color: $light-bg;
+
+      .left {
+         padding-top: 2.5rem;
+         .heading {
+            padding-top: 1rem;
+            margin: 0 auto;
+            max-width: 500px;
+            color: $dark;
+            font-size: 3.1rem;
+            font-weight: bold;
+            line-height: 4.1rem;
+            letter-spacing: 1px;
+            text-shadow: 1px 0.1rem $light-blue;
+            
+            span {
+               background-clip: text;
+               background-image: linear-gradient(to right, $primary, $accent, $accent, $primary);
+               color: transparent;
+               text-shadow: none;
+            }
+         }
+      }
+      
+      .right {
+         img {
+            width: 440px;
+         }
+      }
+   }
+}
+
 .body {
    &.container {
       height: 35vh;
