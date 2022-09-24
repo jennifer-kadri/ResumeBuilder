@@ -1,28 +1,23 @@
-const Router = require("express").Router();
-const mysqlConn = require("../config/database");
-const { register, login } = require("../controllers/userController");
+const { verifySignUp, authJwt } = require("../middleware");
+const controller = require("../controllers/userController");
+const router = require("express").Router();
 
-Router.post("/register", register);
-Router.post("/login", login);
+module.exports = function (app) {
+   app.use((req, res, next) => {
+      res.header(
+         "Access-Control-Allow-Headers",
+         "x-access-token, Origin, Content-Type, Accept"
+      );
+      next();
+   });
+   
+   router.post("/signup", verifySignUp.checkDuplicateEmail);
+   router.post("/login", controller.login);
+   router.post("/logout", authJwt.verifyToken, controller.logout);
+   router.post("/refresh", controller.refreshToken);
 
-Router.post("/", (req, res) => {
-   res.json({ message: "Welcome to Resume Builder"});
-   let qb = req.body;
-   const sql = 
-      "SET @id = ?; SET @email: SET @password;";
-   mysqlConn.query(
-      sql,
-      [
-         qb.id,
-         qb.email,
-         qb.password,
-      ],
-      (err, results, fields) => {
-         if (!err) {
-            res.type('json')
-         }
-      }
-   )
-})
+   router.get("/user", authJwt.verifyToken, controller.userBoard);
+   router.get("/user-infos", authJwt.verifyToken, controller.getUserInfos);
 
-module.exports = Router;
+   app.use("/api/auth", router);
+};
