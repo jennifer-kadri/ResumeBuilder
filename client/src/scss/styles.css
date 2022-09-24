@@ -344,7 +344,7 @@ li {
   gap: 1rem;
 }
 #navbar-main #navbar #navbelt .auth .hide {
-  display: hidden;
+  display: none;
 }
 #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {
   color: rgb(255, 255, 255);
@@ -362,13 +362,17 @@ li {
   border-radius: 4px;
 }
 @media screen and (max-width: 680px) {
-  #navbar-main #navbar #navbelt .auth {
+  #navbar-main #navbar #navbelt .auth .hide {
+    display: block;
+  }
+  #navbar-main #navbar #navbelt .auth .hide .user {
+    display: hidden;
+    color: rgb(255, 255, 255);
+  }
+  #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {
     display: none;
     padding: 0;
     gap: 0;
-  }
-  #navbar-main #navbar #navbelt .auth .hide {
-    display: block;
   }
 }
 @media screen and (max-width: 680px) {

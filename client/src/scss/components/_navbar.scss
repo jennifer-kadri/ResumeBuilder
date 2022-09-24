@@ -40,7 +40,7 @@
             gap: 1rem;
 				
 				.hide {
-					display: hidden;
+					display: none;
 				}
 				.create, .signup, .signin {
 					color: $light;
@@ -62,10 +62,16 @@
 				@media screen and (max-width: 680px) {
 					.hide {
 						display: block;
+						.user {
+							display: hidden;
+							color: $light;
+						}
 					}
-					display: none;
-					padding: 0;
-					gap: 0;
+					.create, .signup, .signin {
+						display: none;
+						padding: 0;
+						gap: 0;
+					}
 				}
 			}
 			@media screen and (max-width: 680px) {
