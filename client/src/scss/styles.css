@@ -332,21 +332,21 @@ li {
   flex-direction: row;
   align-items: center;
   line-height: 1.5;
+  padding: 0 1rem;
+  gap: 1rem;
 }
 #navbar-main #navbar #navbelt .auth .signin, #navbar-main #navbar #navbelt .auth .signup {
   color: rgb(255, 255, 255);
-  padding: 0 2px;
+  padding: 4px 12px;
   font-size: 1.1rem;
   font-weight: 500;
-  text-decoration: underline;
-  -webkit-text-decoration-color: rgb(187, 225, 247);
-          text-decoration-color: rgb(187, 225, 247);
   transition: all 400ms ease;
+  text-transform: uppercase;
 }
 #navbar-main #navbar #navbelt .auth .signin:hover, #navbar-main #navbar #navbelt .auth .signup:hover {
   text-decoration: none;
   color: rgb(35, 156, 226);
-  background-color: rgb(255, 255, 255);
-  padding: 0 4px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 4px 12px;
   border-radius: 4px;
 }/*# sourceMappingURL=styles.css.map */

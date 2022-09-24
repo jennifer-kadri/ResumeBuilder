@@ -49,20 +49,21 @@
 				flex-direction: row;
 				align-items: center;
 				line-height: 1.5;
+            padding: 0 1rem;
+            gap: 1rem;
 				.signin, .signup {
 					color: $light;
-					padding: 0 2px;
+					padding: 4px 12px;
                font-size: 1.1rem;
                font-weight: 500;
-					text-decoration: underline;
-					text-decoration-color: $light-blue;
 					transition: $transition;
+               text-transform: uppercase;
 
 					&:hover {
 						text-decoration: none;
                   color: $primary;
-						background-color: $light;
-						padding: 0 4px;
+						background-color: rgb($light, 0.9);
+						padding: 4px 12px;
 						border-radius: 4px;
 					}
 				}
