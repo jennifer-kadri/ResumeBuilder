@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import axios from "axios"
-import { API_BASE_URL } from "../../config"
+import { API_BASE_URL } from "../config"
 import styled from "styled-components"
 
 const Navbar = () => {
@@ -41,9 +41,9 @@ const Navbar = () => {
             <Div className="auth">
               <Small className="auth-msg">
                 Bienvenue,  <Link to="/login" className="signin">connectez-vous</Link>
-                <br></br> ou bien <Link to="/register" className="signup">créez un compte</Link>
+                <br></br> ou bien <Link to="/signup" className="signup">créez un compte</Link>
               </Small>
-              <Profile className="profile-icon" />
+              {/* <Profile className="profile-icon" /> */}
             </Div>
           </HeroWrapper>
 
@@ -56,7 +56,7 @@ const Navbar = () => {
                     className={activeNav === "/profil" ? "active" : ""}
                   >
                     <Span className="text">Compte</Span>
-                    <User className="small-nav-icon account" />
+                    {/* <User className="small-nav-icon account" /> */}
                   </Link>
                 </Li>
               </Links>
@@ -71,8 +71,11 @@ const NavBar = styled.nav``
 const Container = styled.div``
 const HeroWrapper = styled.div``
 const Div = styled.div``
-const Brand = styled.h1`
-font-size: 1.4rem;
-`
+const Brand = styled.h1`font-size: 1.4rem;`
+const Span = styled.span``
+const Small = styled.small`word-break: break-word;`
+const Hyperlinks = styled.div``
+const Links = styled.ul``
+const Li = styled.li``
 
 export default Navbar
