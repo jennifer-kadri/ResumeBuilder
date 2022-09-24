@@ -44,9 +44,52 @@ const Editor = (props) => {
          </div>
          <div className="row">
             <InputControl 
-               label="Location"
-               placeholder="Enter location eg. Remote"
+               label="End Date"
+               placeholder="Enter end date of work"
             />
+         </div>
+
+         <div className="column">
+            <label>Enter work description</label>
+            <InputControl placeholder="Line 1" />
+            <InputControl placeholder="Line 2" />
+            <InputControl placeholder="Line 3" />
+         </div>
+      </div>
+   )
+
+   const projectBody = (
+      <div className="detail">
+         <div className="row">
+            <InputControl 
+               label="Title"
+               placeholder="Enter title eg. Chat Application"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Overview"
+               placeholder="Enter basic overview of project"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Deployed Link"
+               placeholder="Enter deployment link if existing"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Location"
+               placeholder="Enter Github link of project"
+            />
+         </div>
+
+         <div className="column">
+            <label>Enter project description</label>
+            <InputControl placeholder="Line 1" />
+            <InputControl placeholder="Line 2" />
+            <InputControl placeholder="Line 3" />
          </div>
       </div>
    )
