@@ -29,6 +29,20 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/public", express.static(path.join(__dirname, "public")));
 
+const db = require("./app/models");
+const User = db.user;
+const Op = db.Sequelize.Op;
+
+/** SYNC DB SEQUELIZE **/
+db.sequelize.sinc()
+   .then(() => {
+      console.log("Database synced");
+   })
+   .catch((err) => {
+      console.error("Error syncing database:" + err.message);
+   });
+
+
 app.use("api/auth", userRoutes);
 
 /** CONNEXION TO LOCALHOST **/
