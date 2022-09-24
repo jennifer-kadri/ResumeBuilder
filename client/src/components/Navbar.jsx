@@ -38,19 +38,21 @@ const Navbar = () => {
               </Link>
             </Brand>
 
-            {!isLoggedIn && (
               <Div className="auth">
                 <Button className="btn">
-                  <Link to="/make-resume" className="create">Create Resume</Link> 
+                  <Link to="/create" className="create">Create Resume</Link> 
                 </Button>
-              <Button className="btn">
-                <Link to="/login" className="signin">Login</Link>
-              </Button>
-              <Button className="btn">
-                <Link to="/signup" className="signup">Signup</Link>
-              </Button>
+              {!isLoggedIn && (
+                <>
+                <Button className="btn">
+                  <Link to="/login" className="signin">Login</Link>
+                </Button>
+                <Button className="btn">
+                  <Link to="/signup" className="signup">Signup</Link>
+                </Button>
+                </>
+              )}
             </Div>
-            )}
           </HeroWrapper>
         </Container>
       </NavBar>
