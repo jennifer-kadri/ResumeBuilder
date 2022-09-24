@@ -17,14 +17,16 @@ exports.userBoard = (req, res) => {
 };
 
 /** REGISTER **/
-module.exports.register = async (req, res, next) => {
+module.exports.signup = async (req, res, next) => {
    User.create({
       email: req.body.email,
       firstname: req.body.firstname,
       lastname: req.body.lastname,
-      civility: req.body.civility,
       username: req.body.username,
       password: bcrypt.hashSync(req.body.password, 8)
+  })
+  .then(data => {
+    res.send(data);
   })
    .catch(err => {
       res.status(500).send({ message: err.message });
@@ -84,7 +86,7 @@ module.exports.logout = (req, res) => {
 };
 
 /** TOKEN REFRESH **/
-exports.refreshToken = async (req, res) => {
+module.exports.refreshToken = async (req, res) => {
    const { refreshToken: requestToken } = req.body;
    if (requestToken == null) {
        return res.status(403).json({ message: "Refresh Token is required!" });
@@ -136,6 +138,9 @@ module.exports.getUserInfos = (req, res) => {
    User.findOne({
       where: {
          id: userId
-      },
+      }
    })
+   .then(data => {
+    res.send(data);
+})
 }

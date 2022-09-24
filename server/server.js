@@ -6,7 +6,6 @@ const fileUpload = require("express-fileupload");
 const server = require("http").createServer(app);
 const dotenv = require("dotenv").config();
 const morgan = require("morgan");
-const userRoutes = require("./app/routes/routes");
 
 var path = require("path");
 var bcrypt = require("bcryptjs");
@@ -36,14 +35,25 @@ const Op = db.Sequelize.Op;
 /** SYNC DB SEQUELIZE **/
 db.sequelize.sync()
    .then(() => {
+      // initial();  
       console.log("Database synced");
    })
    .catch((err) => {
       console.error("Error syncing database:" + err.message);
    });
 
+async function initial() {
 
-app.use("api/auth", userRoutes);
+   await User.create({
+      email: "miyu@gmail.com",
+      password: bcrypt.hashSync("12345678", 8),
+      firstname: 'Miyuna', 
+      lastname: 'Aeri',
+      username: 'MiyuJenn'
+   })
+}
+
+require("./app/routes/routes")(app);
 
 /** CONNEXION TO LOCALHOST **/
 const colors = require("./assets/colors");

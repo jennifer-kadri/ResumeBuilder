@@ -11,7 +11,7 @@ module.exports = function (app) {
       next();
    });
    
-   router.post("/signup", verifySignUp.checkDuplicateEmail);
+   router.post("/signup", verifySignUp.checkDuplicateEmail, controller.signup);
    router.post("/login", controller.login);
    router.post("/logout", authJwt.verifyToken, controller.logout);
    router.post("/refresh", controller.refreshToken);
