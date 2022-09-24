@@ -40,10 +40,10 @@ const Navbar = () => {
 
             <Div className="auth">
               <Button className="auth-btn">
-                <Link to="/login" className="signin">Log In</Link>
+                <Link to="/login" className="signin">Login</Link>
               </Button>
               <Button className="auth-btn">
-                <Link to="/signup" className="signup">Sign Up</Link>
+                <Link to="/signup" className="signup">Signup</Link>
               </Button>
             </Div>
           </HeroWrapper>
