@@ -343,7 +343,7 @@ li {
   padding: 0 1rem;
   gap: 1rem;
 }
-#navbar-main #navbar #navbelt .auth .hidden {
+#navbar-main #navbar #navbelt .auth .hide {
   display: hidden;
 }
 #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {
@@ -367,7 +367,7 @@ li {
     padding: 0;
     gap: 0;
   }
-  #navbar-main #navbar #navbelt .auth .hidden {
+  #navbar-main #navbar #navbelt .auth .hide {
     display: block;
   }
 }
