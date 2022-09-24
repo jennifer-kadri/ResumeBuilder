@@ -339,7 +339,6 @@ li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  line-height: 1.5;
   padding: 0 1rem;
   gap: 1rem;
 }
@@ -363,7 +362,7 @@ li {
 }
 @media screen and (max-width: 680px) {
   #navbar-main #navbar #navbelt .auth {
-    gap: 0.7rem;
+    gap: 1rem;
     padding: 0;
   }
   #navbar-main #navbar #navbelt .auth .hide {
@@ -378,6 +377,6 @@ li {
 }
 @media screen and (max-width: 680px) {
   #navbar-main #navbar #navbelt {
-    padding: 0 0.8rem;
+    padding: 0 0 0 2rem;
   }
 }/*# sourceMappingURL=styles.css.map */
