@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import axios from "axios"
-import { API_BASE_URL } from "../config"
-import styled from "styled-components"
-import { User } from "react-feather"
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { API_BASE_URL } from "../config";
+import styled from "styled-components";
+import { User, Feather } from "react-feather";
 
 const Navbar = () => {
-  const [activeNav, setActiveNav] = useState("/")
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const token = JSON.parse(localStorage.getItem("token"));
@@ -40,6 +38,9 @@ const Navbar = () => {
             </Brand>
 
               <Div className="auth">
+                <Button className="hide btn">
+                  <Link to="/create" className="create"><Feather /></Link>
+                </Button>
                 <Button className="btn">
                   <Link to="/create" className="create">Create Resume</Link> 
                 </Button>
