@@ -6,6 +6,7 @@ Router.post("/register", register);
 Router.post("/login", login);
 
 Router.post("/", (req, res) => {
+   res.json({ message: "Welcome to Resume Builder"});
    let qb = req.body;
    const sql = 
       "SET @id = ?; SET @email: SET @password;";
