@@ -17,7 +17,7 @@ const Body = () => {
    
   return (
       <div className="body container">
-         <p className="heading">Resume Builder</p>
+         <p className="heading">Try it now</p>
          <div className="toolbar">
             <div className="colors">
                {colors.map((item) => ( 
