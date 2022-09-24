@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom"
 import axios from "axios"
 import { API_BASE_URL } from "../config"
 import styled from "styled-components"
+import { User } from "react-feather"
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = useState("/")
@@ -44,12 +45,17 @@ const Navbar = () => {
                 </Button>
               {!isLoggedIn && (
                 <>
-                <Button className="btn">
-                  <Link to="/login" className="signin">Login</Link>
-                </Button>
-                <Button className="btn">
-                  <Link to="/signup" className="signup">Signup</Link>
-                </Button>
+                  <Button className="hidden btn">
+                    <Link to="/login" className="user"><User /></Link>
+                  </Button>
+                  <Link>
+                  </Link>
+                  <Button className="btn">
+                    <Link to="/login" className="signin">Login</Link>
+                  </Button>
+                  <Button className="btn">
+                    <Link to="/signup" className="signup">Signup</Link>
+                  </Button>
                 </>
               )}
             </Div>
