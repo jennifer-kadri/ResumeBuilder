@@ -181,6 +181,63 @@ const Editor = (props) => {
       </div>
    )
 
+    /** PROJECT DATA **/
+    const techBody = (
+      <div className="detail">
+         <div className="row">
+            <InputControl 
+               label="Skills"
+               placeholder="Enter your skills"
+            />
+            <InputControl 
+               label="Lastname"
+               placeholder="Enter your lastname"
+            />
+            <InputControl 
+               label="Title"
+               placeholder="Enter your title eg. Frontend Developer"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Email Address"
+               placeholder="Enter your email address eg. miyudev@mail.com"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Mobile Number"
+               placeholder="Enter your phone number"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Linkedin Link"
+               placeholder="Enter your linkedin profile link"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Github Link"
+               placeholder="Enter your github profile link"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Location"
+               placeholder="Enter Github link of project"
+            />
+         </div>
+
+         <div className="column">
+            <label>Enter your bio description</label>
+            <InputControl placeholder="Line 1" />
+            <InputControl placeholder="Line 2" />
+            <InputControl placeholder="Line 3" />
+         </div>
+      </div>
+   )
+
   return (
     <div className="editor container">
       <div className="header">
