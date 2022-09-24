@@ -1,11 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800&display=swap');
-
+/*======== FAMILY FONTS ========*/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-/********* VARIABLES *********/
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800&display=swap');
 
+:root {
+   /*====== TOASTIFY ======*/
+   --toastify-color-error: #f3b1c7 !important;
+   --toastify-color-progress-light: linear-gradient(
+     to right,
+     #4cd964,
+     #5ac8fa,
+     #007aff,
+     #34aadc,
+     #5856d6,
+     #f3b1c7
+   );
+ }
+
+/********* VARIABLES *********/
 $clr_primary: pink;
 $light: #fff;
 $dark: #000;
 $primary: #239ce2;
 $accent: #1369b9;
+
+$transition: all 400ms ease;

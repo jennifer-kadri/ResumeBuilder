@@ -11,7 +11,7 @@
       .heading {
          margin: 0 auto;
          max-width: 500px;
-         color: $dark;
+         color: --dark;
          font-size: 3.1rem;
          font-weight: bold;
          line-height: 4.1rem;
@@ -19,7 +19,7 @@
          
          span {
             background-clip: text;
-            background-image: linear-gradient(to right, $primary, $accent);
+            background-image: linear-gradient(to right, --primary, --accent);
             color: transparent;
          }
       }

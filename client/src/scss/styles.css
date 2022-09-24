@@ -1,148 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Quicksand", sans-serif;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 41 |   color: $clr-light-pink;
+ *    |          ^^^^^^^^^^^^^^^
+ *    '
+ *   config/_layout.scss 41:10  @import
+ *   styles.scss 3:9            root stylesheet */
 
-.App {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 41 \2502    color: $clr-light-pink;\a    \2502           ^^^^^^^^^^^^^^^\a    \2575 \a   config/_layout.scss 41:10  @import\a   styles.scss 3:9            root stylesheet";
 }
-
-/********* VARIABLES *********/
-.header.container {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  width: 100%;
-  gap: 30px;
-  padding: 6rem 30px;
-  background-color: rgb(238, 252, 255);
-}
-.header.container .heading {
-  margin: 0 auto;
-  max-width: 500px;
-  color: #000;
-  font-size: 3.1rem;
-  font-weight: bold;
-  line-height: 4.1rem;
-  letter-spacing: 1px;
-}
-.header.container .heading span {
-  -webkit-background-clip: text;
-          background-clip: text;
-  background-image: linear-gradient(to right, #239ce2, #1369b9);
-  color: transparent;
-}
-.header.container .right img {
-  width: 400px;
-}
-
-.body.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 30px;
-  gap: 30px;
-  padding: 30px;
-}
-.body.container .heading {
-  font-weight: bold;
-  font-size: 2.1rem;
-  text-shadow: 1px 1px 1px #239ce2;
-}
-.body.container .toolbar {
-  width: 100%;
-  display: flex;
-  gap: 40px;
-  justify-content: space-between;
-  align-items: center;
-}
-.body.container .toolbar button {
-  padding: 10px 16px;
-  border-radius: 5px;
-  background-color: #239ce2;
-  color: #fff;
-  outline: none;
-  border: none;
-  display: flex;
-  gap: 6px;
-  font-weight: 500;
-  font-size: 1.1rem;
-  align-items: center;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-.body.container .toolbar button svg {
-  height: 20px;
-  width: 20px;
-}
-.body.container .colors {
-  display: flex;
-  gap: 20px;
-  padding: 0 30px;
-}
-.body.container .colors .color {
-  height: 36px;
-  width: 36px;
-  border-radius: 50%;
-  background-color: #239ce2;
-}
-
-.editor.container {
-  min-width: 550px;
-  min-height: 450px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-  padding: 10px;
-}
-.editor.container .header {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 1.1rem;
-  padding-bottom: 10px;
-}
-.editor.container .header .section {
-  padding: 10px;
-  border-bottom: 2px solid transparent;
-  font-weight: 500;
-  font-size: 1rem;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.editor.container .header .active {
-  color: #239ce2;
-  cursor: pointer;
-  border-bottom: 2px solid #239ce2;
-}
-
-.inputCtrl.container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.inputCtrl label {
-  font-weight: 500;
-  font-size: 1rem;
-}
-.inputCtrl input {
-  border: 1px solid #cccccc;
-  outline: none;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border-radius: 5px;
-}
-.inputCtrl input:hover {
-  border: 1px solid #adadad;
-}
-.inputCtrl input:focus {
-  border: 1px solid #239ce2;
-}/*# sourceMappingURL=styles.css.map */
