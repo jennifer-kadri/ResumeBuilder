@@ -56,14 +56,14 @@
 					}
 					
 				}
-				@media screen and (max-width: 600px) {
-					.signin, .signup {
-						display: none;
-					}
-					line-height: 1.2;
+				@media screen and (max-width: 680px) {
+					display: none;
 					padding: 0;
 					gap: 0;
 				}
+			}
+			@media screen and (max-width: 680px) {
+				padding: 0 0.8rem;
 			}
 		}
 	}

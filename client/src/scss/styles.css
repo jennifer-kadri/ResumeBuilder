@@ -350,13 +350,15 @@ li {
   padding: 6px 12px;
   border-radius: 4px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
   #navbar-main #navbar #navbelt .auth {
-    line-height: 1.2;
+    display: none;
     padding: 0;
     gap: 0;
   }
-  #navbar-main #navbar #navbelt .auth .signin, #navbar-main #navbar #navbelt .auth .signup {
-    display: none;
+}
+@media screen and (max-width: 680px) {
+  #navbar-main #navbar #navbelt {
+    padding: 0 0.8rem;
   }
 }/*# sourceMappingURL=styles.css.map */
