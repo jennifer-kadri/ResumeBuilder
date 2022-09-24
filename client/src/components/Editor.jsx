@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import InputControl from './InputControl';
-import WorkExpData from './_WorkExpData';
 
 const Editor = (props) => {
 
