@@ -17,6 +17,16 @@ const Navbar = () => {
     }
   }, [location, token]);
 
+  const handleClick = () => {
+    alert("It works");
+    {
+      <>
+      <Link to="/login" >Login</Link>
+      <Link to="/login" >Signup</Link>
+      </>
+    }
+  }
+
   return (
     <>
       <NavBar id="navbar-main">
@@ -37,9 +47,13 @@ const Navbar = () => {
                 </Button>
               {!isLoggedIn && (
                 <>
-                  <Button className="hide btn">
-                    <Link to="/login" className="icon"><User /></Link>
+                  <Div className="hide btn">
+                    <Button
+                      className="icon" 
+                      onClick={handleClick}
+                    ><User />
                   </Button>
+                  </Div>
                   <Button className="btn">
                     <Link to="/login" className="signin">Login</Link>
                   </Button>
