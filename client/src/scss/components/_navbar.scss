@@ -51,17 +51,18 @@
 				line-height: 1.5;
             padding: 0 1rem;
             gap: 1rem;
-				.signin, .signup {
+				
+				.create, .signup, .signin {
 					color: $light;
 					padding: 6px 12px;
-               font-size: 1.1rem;
-               font-weight: 500;
+					font-size: 1.1rem;
+					font-weight: 500;
 					transition: $transition-slow;
-               text-transform: uppercase;
-
+					text-transform: uppercase;
+					
 					&:hover {
 						text-decoration: none;
-                  color: $primary;
+						color: $primary;
 						background-color: rgb($light, 0.9);
 						padding: 6px 12px;
 						border-radius: 4px;
