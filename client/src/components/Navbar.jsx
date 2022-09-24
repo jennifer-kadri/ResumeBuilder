@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { API_BASE_URL } from "../config";
 import styled from "styled-components";
-import { User, Feather, LogOut } from "react-feather";
+import { Feather, SignUp, LogIn, LogOut } from "react-feather";
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,14 +16,6 @@ const Navbar = () => {
       setIsLoggedIn(false)
     }
   }, [location, token]);
-
-  var config = {
-    method: "get",
-    url: `${API_BASE_URL}/category/list`,
-    headers: {
-      "Access-Control-Allow-Origin": "*"
-    }
-  };
 
   return (
     <>
@@ -47,10 +38,11 @@ const Navbar = () => {
               {!isLoggedIn && (
                 <>
                   <Button className="hide btn">
-                    <Link to="/login" className="icon"><User /></Link>
+                    <Link to="/login" className="icon"><LogIn /></Link>
                   </Button>
-                  <Link>
-                  </Link>
+                  <Button className="hide btn">
+                    <Link to="/login" className="icon"><SignUp /></Link>
+                  </Button>
                   <Button className="btn">
                     <Link to="/login" className="signin">Login</Link>
                   </Button>
