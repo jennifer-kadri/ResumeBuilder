@@ -34,7 +34,7 @@ const User = db.user;
 const Op = db.Sequelize.Op;
 
 /** SYNC DB SEQUELIZE **/
-db.sequelize.sinc()
+db.sequelize.sync()
    .then(() => {
       console.log("Database synced");
    })
