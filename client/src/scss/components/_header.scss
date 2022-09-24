@@ -6,12 +6,12 @@
       width: 100%;
       gap: 30px;
       padding: 6rem 30px;
-      background-color: rgb(238, 252, 255);
+      background-color: $light-bg;
 
       .heading {
          margin: 0 auto;
          max-width: 500px;
-         color: --dark;
+         color: $dark;
          font-size: 3.1rem;
          font-weight: bold;
          line-height: 4.1rem;
