@@ -3,6 +3,7 @@ import NavBar from "../components/Navbar";
 import Header from "../components/Header";
 import Body from "../components/Body";
 import styled from "styled-components";
+import { Link, useLocation } from "react-router-dom"
 
 const Home = () => {
    return (
@@ -10,7 +11,7 @@ const Home = () => {
          <NavBar /> 
          <Header />
          <Main className="body container">
-            <Button className="heading">Try it now</Button>
+            <Link to="/signup" className="heading">Try it now</Link>
          </Main>
          {/* <Body /> */}
       </> 
