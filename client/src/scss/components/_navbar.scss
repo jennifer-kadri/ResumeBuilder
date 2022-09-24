@@ -11,19 +11,6 @@
 		line-height: 1em;
 		display: block;
 		zoom: 1;
-		.top-nav {
-			position: fixed;
-			top: 0;
-			width: 100%;
-			z-index: 9999;
-			padding: 0.22rem;
-			align-items: center;
-			text-align: center;
-			background-color: $primary;
-			#logo {
-				font-size: 1rem;
-			}
-		}
 		#navbelt {
 			align-items: center;
 			display: flex;
@@ -67,6 +54,15 @@
 						padding: 6px 12px;
 						border-radius: 4px;
 					}
+					
+				}
+				@media screen and (max-width: 600px) {
+					.signin, .signup {
+						display: none;
+					}
+					line-height: 1.2;
+					padding: 0;
+					gap: 0;
 				}
 			}
 		}
