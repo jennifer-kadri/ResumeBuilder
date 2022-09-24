@@ -53,7 +53,7 @@
             gap: 1rem;
 				.signin, .signup {
 					color: $light;
-					padding: 4px 12px;
+					padding: 6px 12px;
                font-size: 1.1rem;
                font-weight: 500;
 					transition: $transition-slow;
@@ -63,7 +63,7 @@
 						text-decoration: none;
                   color: $primary;
 						background-color: rgb($light, 0.9);
-						padding: 4px 12px;
+						padding: 6px 12px;
 						border-radius: 4px;
 					}
 				}
