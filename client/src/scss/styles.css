@@ -145,6 +145,7 @@ li {
   background-color: rgb(238, 252, 255);
 }
 .header.container .heading {
+  padding-top: 1rem;
   margin: 0 auto;
   max-width: 500px;
   color: rgb(0, 0, 0);
