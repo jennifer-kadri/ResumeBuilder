@@ -115,12 +115,12 @@ body {
 }
 
 .text-dark {
-  color: #000;
+  color: rgb(0, 0, 0);
 }
 
 a {
   text-decoration: none;
-  color: #239ce2;
+  color: rgb(35, 156, 226);
 }
 
 li {
@@ -174,7 +174,7 @@ li {
 .body.container .heading {
   font-weight: bold;
   font-size: 2.1rem;
-  text-shadow: 1px 1px 1px #239ce2;
+  text-shadow: 1px 1px 1px rgb(35, 156, 226);
 }
 .body.container .toolbar {
   width: 100%;
@@ -186,8 +186,8 @@ li {
 .body.container .toolbar button {
   padding: 10px 16px;
   border-radius: 5px;
-  background-color: #239ce2;
-  color: #fff;
+  background-color: rgb(35, 156, 226);
+  color: rgb(255, 255, 255);
   outline: none;
   border: none;
   display: flex;
@@ -211,7 +211,7 @@ li {
   height: 36px;
   width: 36px;
   border-radius: 50%;
-  background-color: #239ce2;
+  background-color: rgb(35, 156, 226);
 }
 
 .editor.container {
