@@ -1,10 +1,12 @@
-import React from 'react'
-import Header from '../components/Header'
-import Body from '../components/Body'
+import React from "react";
+import NavBar from "../components/Navbar";
+import Header from "../components/Header";
+import Body from "../components/Body";
 
 const Home = () => {
    return (
       <>
+         <NavBar /> 
          <Header />
          <Body />
       </> 
