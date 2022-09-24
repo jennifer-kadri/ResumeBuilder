@@ -1,5 +1,5 @@
 import React from 'react'
-import Resume from '../assets/cv.svg'
+import logoSvg from '../assets/logo.svg'
 
 const Header = () => {
   return (
@@ -15,7 +15,7 @@ const Header = () => {
          </p> 
       </div>
       <div className="right">
-         <img src={Resume} alt="Resume" />
+         <img src={logoSvg} alt="Resume" />
       </div>
     </div>
   )  
