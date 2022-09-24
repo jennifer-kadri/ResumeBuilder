@@ -45,21 +45,23 @@
 				}
 			}
 			.auth {
-            font-size: 1.1rem;
-				display: flex;
+            display: flex;
 				flex-direction: row;
 				align-items: center;
 				line-height: 1.5;
 				.signin, .signup {
 					color: $light;
+					padding: 0 2px;
+               font-size: 1.1rem;
+               font-weight: 500;
 					text-decoration: underline;
 					text-decoration-color: $light-blue;
 					transition: $transition;
-					padding: 0 2px;
 
 					&:hover {
 						text-decoration: none;
-						background-color: #a7cae6e8;
+                  color: $primary;
+						background-color: $light;
 						padding: 0 4px;
 						border-radius: 4px;
 					}
