@@ -11,7 +11,7 @@ const Home = () => {
          <NavBar /> 
          <Header />
          <Main className="body container">
-            <Link to="/signup" className="heading">Try it now</Link>
+            <Link to="/signup" className="heading">Create your resume</Link>
          </Main>
       </> 
    )  
