@@ -45,7 +45,7 @@ const Navbar = () => {
                 </Button>
               {!isLoggedIn && (
                 <>
-                  <Button className="hidden btn">
+                  <Button className="hide btn">
                     <Link to="/login" className="user"><User /></Link>
                   </Button>
                   <Link>
