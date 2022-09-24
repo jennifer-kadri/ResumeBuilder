@@ -365,8 +365,7 @@ li {
   #navbar-main #navbar #navbelt .auth .hide {
     display: block;
   }
-  #navbar-main #navbar #navbelt .auth .hide .user {
-    display: hidden;
+  #navbar-main #navbar #navbelt .auth .hide .user, #navbar-main #navbar #navbelt .auth .hide .create {
     color: rgb(255, 255, 255);
   }
   #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {

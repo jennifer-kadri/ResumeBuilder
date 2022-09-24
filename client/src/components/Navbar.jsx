@@ -42,12 +42,12 @@ const Navbar = () => {
                   <Link to="/create" className="create"><Feather /></Link>
                 </Button>
                 <Button className="btn">
-                  <Link to="/create" className="create">Create Resume</Link> 
+                  <Link to="/create" className="icon">Create Resume</Link> 
                 </Button>
               {!isLoggedIn && (
                 <>
                   <Button className="hide btn">
-                    <Link to="/login" className="user"><User /></Link>
+                    <Link to="/login" className="icon"><User /></Link>
                   </Button>
                   <Link>
                   </Link>

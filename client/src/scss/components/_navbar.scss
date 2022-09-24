@@ -62,8 +62,7 @@
 				@media screen and (max-width: 680px) {
 					.hide {
 						display: block;
-						.user {
-							display: hidden;
+						.user, .create {
 							color: $light;
 						}
 					}
