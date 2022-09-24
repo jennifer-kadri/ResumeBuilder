@@ -191,7 +191,7 @@ li {
 }
 .body.container .heading:hover {
   color: rgb(35, 156, 226);
-  background-color: rgba(187, 225, 247, 0.4);
+  background-color: rgba(187, 225, 247, 0.3);
   border: 2px solid rgb(35, 156, 226);
 }
 
