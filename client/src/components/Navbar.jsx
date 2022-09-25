@@ -80,7 +80,7 @@ const Navbar = () => {
               )}
               {isLoggedIn && (
                 <>
-                  <Button className="hide btn">
+                  <Button className="btn">
                     <Link to="/" className="icon logout" onClick={handleLogout} ><LogOut /></Link>
                   </Button>
                 </>
