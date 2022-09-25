@@ -1,5 +1,7 @@
-const handleOpts = () => {
-   
+import Register from "../../pages/Register";
+
+const registerOpts = () => {
+
    const required = (value) => {
       if (!value) {
          return (
@@ -20,7 +22,7 @@ const handleOpts = () => {
       };
    };
 
-   const validatePassword = (value) => {
+   const validPassword = (value) => {
       if (value.length < 6 || value.length > 40) {
          return (
             <div className="error">
@@ -30,7 +32,7 @@ const handleOpts = () => {
       };
    };
 
-   const validateUsername = (value) => {
+   const validUsername = (value) => {
       console.log(value);
       if (value === null | value === "") {
          return (
@@ -40,7 +42,13 @@ const handleOpts = () => {
          );
       };
    };
+
+   return (
+      <>
+         <Register required={required} validEmail={validEmail}  validPassword={validPassword} validUsername={validUsername} />
+      </>
+   )
 }
 
 
-export default required
+export default registerOpts
