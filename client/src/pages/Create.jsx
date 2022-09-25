@@ -17,7 +17,6 @@ const Create = () => {
    
   return (
       <div className="create container">
-         <p className="heading">Try it now</p>
          <div className="toolbar">
             <div className="colors">
                {colors.map((item) => ( 
