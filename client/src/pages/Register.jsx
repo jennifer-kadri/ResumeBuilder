@@ -109,25 +109,72 @@ const Register = ({ required, validEmail, validPassword, validUsername }) => {
             </div>
 
             <form className="form">
-               <label className="form-label">Firstname</label>
-               <input type="text" onChange={handleFirstname} className="form-input" value={firstname} />
+               <input 
+                  type="text" 
+                  className="form-input" 
+                  name="firstname"
+                  placeholder="Firstname"
+                  value={firstname} 
+                  onChange={handleFirstname} 
+                  validations={[required]}
+               />
             
-               <label className="form-label">Lastname</label>
-               <input type="text" onChange={handleLastname} className="form-input" value={lastname} />
+               <input 
+                  type="text" 
+                  className="form-input" 
+                  name="lastname" 
+                  placeholder="Lastname"
+                  value={lastname} 
+                  onChange={handleLastname} 
+                  validations={[required]}
+               />
 
-               <label className="form-label">Username</label>
-               <input type="text" onChange={handleUsername} className="form-input" value={username} />
+               <input 
+                  type="text" 
+                  className="form-input" 
+                  name="username" 
+                  placeholder="Username"
+                  value={username} 
+                  onChange={handleUsername} 
+                  validations={[required]}
+               />
 
-               <label className="form-label">Email</label>
-               <input type="text" onChange={handleEmail} className="form-input" value={email} />
+               <input 
+                  type="text" 
+                  className="form-input" 
+                  name="email" 
+                  placeholder="Email"
+                  value={email} 
+                  onChange={handleEmail} 
+                  validations={[required, validEmail]}
+               />
 
-               <label className="form-label">Password</label>
-               <input type="text" onChange={handlePassword} className="form-input" value={password} />
+               <input 
+                  type="text" 
+                  className="form-input" 
+                  name="password" 
+                  placeholder="Password"
+                  value={password} 
+                  onChange={handlePassword} 
+                  validations={[required, validPassword]}
+               />
 
-               <label className="form-label">Confirm Password</label>
-               <input type="text" onChange={handleConfirmPassword} className="form-input" value={confirmPassword} />
+               <input 
+                  type="text" 
+                  className="form-input" 
+                  name="confirm-password" 
+                  placeholder="Confirm password"
+                  value={confirmPassword} 
+                  onChange={handleConfirmPassword}
+                  validations={[required]}
+               />
             
                <button type="submit" onClick={handleSubmit} className="btn btn-submit">Register</button>
+
+               <div className="account">
+                  <span>Already have an account?</span>
+                  <Link to="/login">Log in</Link>
+               </div>
             </form>
          </div>
       </> 
