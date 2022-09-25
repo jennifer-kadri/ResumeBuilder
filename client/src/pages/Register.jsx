@@ -133,10 +133,10 @@ const Register = (props) => {
       <>
          <div id="register">
             <div className="container">
-               <div className="div"><h1>Create your account</h1></div>
                <Form className="form" onSubmit={handleSubmit} ref={form}>
                   {!successful && (
                      <>
+                        <div className="div"><h1>Create your account</h1></div>
                         <div className="form-group">
                            <Input 
                               type="text" 
@@ -215,6 +215,11 @@ const Register = (props) => {
                         </div>
                      
                         <button type="submit" className="btn btn-submit">Register</button>
+
+                        <div className="account">
+                           <span>Already have an account?</span>
+                           <Link to="/login">Log in</Link>
+                        </div>
                      </>
                   )}
                </Form>
@@ -227,11 +232,6 @@ const Register = (props) => {
                   </div>
                )}
                     
-
-               <div className="account">
-                  <span>Already have an account?</span>
-                  <Link to="/login">Log in</Link>
-               </div>
             </div>
          </div>
       </> 

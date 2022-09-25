@@ -511,11 +511,16 @@ li {
   gap: 1.2rem;
 }
 #register .container .form .form-input {
-  border: 2px solid rgb(96, 177, 224);
+  background: rgba(187, 225, 247, 0.6);
+  border: 2px solid transparent;
   text-align: center;
-  font-size: 1.1rem;
-  padding: 0.6rem;
-  border-radius: 1rem;
+  font-size: 1rem;
+  padding: 0.6rem 2rem;
+  border-radius: 4px;
+  caret-color: rgb(96, 177, 224);
+}
+#register .container .form .form-input::placeholder {
+  color: rgb(146, 146, 146);
 }
 #register .container .form .btn {
   margin-top: 2rem;
