@@ -3,19 +3,34 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 6rem;
+      padding-top: 8rem;
       font-size: 1rem;
+
+      h1 {
+         background-clip: text;
+         background-image: linear-gradient(to right, $primary, $accent, $accent, $primary);
+         color: transparent;
+         text-shadow: 12px 12px 12px $light;
+      }
+
       .form {
          display: flex;
          flex-direction: column;
          align-items: center;
          font-size: 1.2rem;
+         margin: 2rem 0;
+         gap: 1.2rem;
 
          .form-input {
+            border: 2px solid $blue;
             text-align: center;
             font-size: 1.1rem;
+            padding: 0.6rem;
+            border-radius: 1rem;
          }
+         
          .btn {
+            margin-top: 2rem;
             padding: 1rem 2rem;
             cursor: pointer;
          }
