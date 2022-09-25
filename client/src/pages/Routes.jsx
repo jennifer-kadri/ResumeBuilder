@@ -4,7 +4,7 @@ import NavBar from '../components/Navbar'
 import Home from '../pages/Home'
 import Login from './Login'
 import Register from './Register'
-import Body from '../components/Body'
+import Create from './Create'
 
 const Pages = () => {
   return (
@@ -14,7 +14,7 @@ const Pages = () => {
       <Route path="/" element={<Home />}/>
       <Route path="/signup" element={<Register />}/>
       <Route path="/login" element={<Login />}/>
-      <Route path="/create" element={<Body />}/>
+      <Route path="/create" element={<Create />}/>
     </Routes>
     </>
   )  
