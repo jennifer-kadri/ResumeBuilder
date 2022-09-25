@@ -1,15 +1,33 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { menuItems } from "./Dropdown/_menuItems";
 import MenuItems from './Dropdown/MenuItems';
 import { Feather, LogOut } from "react-feather";
+import AuthService from "../components/Auth/auth.service"
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const anchorRef = useRef(null);
+  const token = JSON.parse(localStorage.getItem("token"));
+  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const token = JSON.parse(localStorage.getItem("token"));
-  const location = useLocation()
+  const handleLogout = (event) => {
+    AuthService.logout()
+        .then(function (response) {
+            localStorage.removeItem("token")
+            navigate('/')
+            setIsLoggedIn(false);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+        return;
+    }
+}
 
   useEffect(() => {
     if (token) {
@@ -63,7 +81,7 @@ const Navbar = () => {
               {isLoggedIn && (
                 <>
                   <Button className="hide btn">
-                    <Link to="/signup" className="icon"><LogOut /></Link>
+                    <Link to="/" className="icon logout" onClick={handleLogout}><LogOut /></Link>
                   </Button>
                 </>
               )}

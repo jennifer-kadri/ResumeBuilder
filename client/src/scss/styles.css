@@ -195,6 +195,10 @@ li {
 #navbar-main #navbar #navbelt .auth .hide .icon:hover {
   color: rgb(35, 156, 226);
 }
+#navbar-main #navbar #navbelt .auth .hide .icon.logout {
+  margin-left: 1.4rem;
+  margin-right: 3rem;
+}
 #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {
   color: rgb(255, 255, 255);
   padding: 6px 12px;

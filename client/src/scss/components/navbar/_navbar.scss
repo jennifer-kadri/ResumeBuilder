@@ -50,6 +50,11 @@
 						&:hover {
 							color: $primary;
 						}
+
+						&.logout {
+							margin-left: 1.4rem;
+							margin-right: 3rem;
+						}
 					}
 				}
 				.create, .signup, .signin {
