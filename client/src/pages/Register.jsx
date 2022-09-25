@@ -138,27 +138,75 @@ const Register = (props) => {
                   {!successful && (
                      <>
                         <div className="form-group">
-                           <Input type="text" onChange={handleFirstname} className="form-input" value={firstname} validations={[required]}/>
+                           <Input 
+                              type="text" 
+                              className="form-input" 
+                              placeholder="Firstname"
+                              name="firstname"
+                              value={firstname} 
+                              onChange={handleFirstname} 
+                              validations={[required]}
+                           />
                         </div>
                      
                         <div className="form-group">
-                           <Input type="text" onChange={handleLastname} className="form-input" value={lastname} validations={[required]}/>
+                           <Input 
+                              type="text" 
+                              className="form-input" 
+                              placeholder="Lastname"
+                              name="lastname"
+                              value={lastname} 
+                              onChange={handleLastname} 
+                              validations={[required]}
+                           />
                         </div>
 
                         <div className="form-group">
-                           <Input type="text" onChange={handleUsername} className="form-input" value={username} validations={[required, validUsername]}/>
+                           <Input 
+                              type="text" 
+                              className="form-input" 
+                              placeholder="Username"
+                              name="username"                             
+                              value={username} 
+                              onChange={handleUsername} 
+                              validations={[required, validUsername]}
+                           />
                         </div>
 
                         <div className="form-group">
-                           <Input type="text" onChange={handleEmail} className="form-input" value={email} validations={[required, validEmail]}/>
+                           <Input 
+                              type="text" 
+                              className="form-input" 
+                              placeholder="Email"
+                              name="email"
+                              value={email} 
+                              onChange={handleEmail} 
+                              validations={[required, validEmail]}
+                           />
                         </div>
 
                         <div className="form-group">
-                           <Input type="text" onChange={handlePassword} className="form-input" value={password} validations={[required, validPassword]}/>
+                           <Input 
+                              type="text" 
+                              className="form-input" 
+                              placeholder="Password"
+                              name="password"
+                              value={password} 
+                              onChange={handlePassword} 
+                              validations={[required, validPassword]}
+                           />
                         </div>
 
                         <div className="form-group">
-                           <Input type="text" onChange={handleConfirmPassword} className="form-input" value={confirmPassword} validations={[required]}/>
+                           <Input 
+                              type="text" 
+                              className="form-input" 
+                              placeholder="Confirm password"
+                              name="confiirm-password"
+                              value={confirmPassword} 
+                              onChange={handleConfirmPassword} 
+                              validations={[required]}
+                           />
                            {errorMessage && isDirty ? 
                               <div className="invalid">
                                  Password did not match
