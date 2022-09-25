@@ -237,6 +237,44 @@ const Editor = (props) => {
       </div>
    )
 
+   const summaryBody = (
+      <div className="detail">
+         <InputControl
+            label="Summary"
+            placeholder="Enter your objective / summary"
+         />
+      </div>
+   );
+
+   const otherBody = (
+      <div className="detail">
+         <InputControl
+            label="Other"
+            placeholder="Enter some other objective"
+         />
+      </div>
+   )
+
+   const generateBody = () => {
+      switch(sections[activeSection]) {
+         case sections.basicInfo:
+            return infoBody;
+         case sections.workExp:
+            return workExpBody;
+         case sections.project:
+            return projectBody;
+         case sections.education:
+            return eduBody;
+         case sections.techno:
+            return techBody;
+         case sections.summary:
+            return summaryBody;
+         case sections.other:
+            return otherBody;
+            default: return null;
+      }
+   };
+
   return (
     <div className="editor container">
       <div className="header">
@@ -256,6 +294,7 @@ const Editor = (props) => {
             label="Title" 
             placeholder="Enter your title" 
          />
+         {generateBody()}
       </div>
     </div>
   )
