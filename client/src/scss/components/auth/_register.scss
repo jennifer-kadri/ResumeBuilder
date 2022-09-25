@@ -12,6 +12,11 @@
          color: transparent;
          text-shadow: 12px 12px 12px $light;
          margin-bottom: 1rem;
+         transition: $transition-slow;
+
+         @media screen and (max-width: 984px) {
+            font-size: 1.8rem;
+         }
       }
 
       .alert-danger {
@@ -21,6 +26,8 @@
       }           
 
       .form {
+         z-index: 6;
+         top: 20px;
          display: flex;
          flex-direction: column;
          align-items: center;
@@ -67,6 +74,7 @@
    }
 
    .account {
+      z-index: 6;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -81,6 +89,22 @@
             background: $blue;
             border-radius: 4px;
          }
+      }
+   }
+
+   img {
+      position: absolute;
+      top: 600px;
+      right: 0;
+      z-index: 2;
+      opacity: 90%;
+      height: 320px;
+      transition: $transition-slow;
+      
+      @media screen and (max-width: 984px) {
+         top: 740px;
+         height: 200px;
+
       }
    }
 }

@@ -502,6 +502,12 @@ li {
   color: transparent;
   text-shadow: 12px 12px 12px rgb(255, 255, 255);
   margin-bottom: 1rem;
+  transition: all 600ms ease;
+}
+@media screen and (max-width: 984px) {
+  #register .container h1 {
+    font-size: 1.8rem;
+  }
 }
 #register .container .alert-danger {
   color: rgb(226, 85, 85);
@@ -509,6 +515,8 @@ li {
   font-weight: 500;
 }
 #register .container .form {
+  z-index: 6;
+  top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -547,6 +555,7 @@ li {
   cursor: pointer;
 }
 #register .account {
+  z-index: 6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -560,6 +569,21 @@ li {
   color: rgb(255, 255, 255);
   background: rgb(96, 177, 224);
   border-radius: 4px;
+}
+#register img {
+  position: absolute;
+  top: 600px;
+  right: 0;
+  z-index: 2;
+  opacity: 90%;
+  height: 320px;
+  transition: all 600ms ease;
+}
+@media screen and (max-width: 984px) {
+  #register img {
+    top: 740px;
+    height: 200px;
+  }
 }
 
 .inputCtrl.container {
