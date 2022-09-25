@@ -496,21 +496,21 @@ li {
   padding-top: 8rem;
   font-size: 1rem;
 }
-#register .container h1 {
-  background-clip: text;
-  background-image: linear-gradient(to right, rgb(35, 156, 226), rgb(19, 105, 185), rgb(19, 105, 185), rgb(35, 156, 226));
-  color: transparent;
-  text-shadow: 12px 12px 12px rgb(255, 255, 255);
-}
 #register .container .form {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 1.2rem;
-  margin: 2rem 0;
   gap: 1.2rem;
+  margin: 2rem 0;
 }
-#register .container .form .form-input {
+#register .container .form h1 {
+  background-clip: text;
+  background-image: linear-gradient(to right, rgb(35, 156, 226), rgb(19, 105, 185), rgb(19, 105, 185), rgb(35, 156, 226));
+  color: transparent;
+  text-shadow: 12px 12px 12px rgb(255, 255, 255);
+}
+#register .container .form .form-group .form-input {
   background: rgba(187, 225, 247, 0.6);
   border: 2px solid transparent;
   text-align: center;
@@ -519,7 +519,7 @@ li {
   border-radius: 4px;
   caret-color: rgb(96, 177, 224);
 }
-#register .container .form .form-input::placeholder {
+#register .container .form .form-group .form-input::placeholder {
   color: rgb(94, 94, 94);
 }
 #register .container .form .btn {

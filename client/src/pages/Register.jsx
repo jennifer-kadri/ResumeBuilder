@@ -133,10 +133,12 @@ const Register = (props) => {
       <>
          <div id="register">
             <div className="container">
+               {!successful && (
+                  <div className="div"><h1>Create your account</h1></div>
+               )}
                <Form className="form" onSubmit={handleSubmit} ref={form}>
                   {!successful && (
                      <>
-                        <div className="div"><h1>Create your account</h1></div>
                         <div className="form-group">
                            <Input 
                               type="text" 
@@ -216,10 +218,6 @@ const Register = (props) => {
                      
                         <button type="submit" className="btn btn-submit">Register</button>
 
-                        <div className="account">
-                           <span>Already have an account?</span>
-                           <Link to="/login">Log in</Link>
-                        </div>
                      </>
                   )}
                </Form>
@@ -231,7 +229,20 @@ const Register = (props) => {
                      </div>
                   </div>
                )}
-                    
+
+               {!successful && (
+                  <div className="account">
+                     <span>Already have an account?</span>
+                     <Link to="/login">Log in</Link>
+                  </div>
+               )}
+
+               {successful && (
+                  <div className="signed">
+                     <h2>Registration successful ! </h2>
+                     <span>Welcome to Resume Builder {username}</span>
+                  </div>
+               )}
             </div>
          </div>
       </> 

@@ -6,32 +6,35 @@
       padding-top: 8rem;
       font-size: 1rem;
 
-      h1 {
-         background-clip: text;
-         background-image: linear-gradient(to right, $primary, $accent, $accent, $primary);
-         color: transparent;
-         text-shadow: 12px 12px 12px $light;
-      }
-
       .form {
          display: flex;
          flex-direction: column;
          align-items: center;
          font-size: 1.2rem;
-         margin: 2rem 0;
          gap: 1.2rem;
+         margin: 2rem 0;
 
-         .form-input {
-            background: rgb($light-blue, 0.6);
-            border: 2px solid transparent;
-            text-align: center;
-            font-size: 1rem;
-            padding: 0.6rem 2rem;
-            border-radius: 4px;
-            caret-color: $blue;
+         h1 {
+            background-clip: text;
+            background-image: linear-gradient(to right, $primary, $accent, $accent, $primary);
+            color: transparent;
+            text-shadow: 12px 12px 12px $light;
+         }
 
-            &::placeholder {
-               color: $gray;
+         .form-group {
+            
+            .form-input {
+               background: rgb($light-blue, 0.6);
+               border: 2px solid transparent;
+               text-align: center;
+               font-size: 1rem;
+               padding: 0.6rem 2rem;
+               border-radius: 4px;
+               caret-color: $blue;
+
+               &::placeholder {
+                  color: $gray;
+               }
             }
          }
          
