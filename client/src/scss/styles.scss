@@ -1,8 +1,8 @@
 @import "config/variables";
 @import "config/base";
 @import "config/layout";
-@import "components/navbar";
-@import "components/dropdown";
+@import "components/navbar/navbar";
+@import "components/navbar/dropdown";
 @import "components/home";
 @import "components/create";
 @import "components/inputCtrl";
