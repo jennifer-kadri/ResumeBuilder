@@ -185,73 +185,56 @@ const Editor = (props) => {
       <div className="detail">
          <div className="row">
             <InputControl 
-               label="Skills"
+               label="Skill 1"
                placeholder="Enter your skills"
             />
             <InputControl 
-               label="Lastname"
-               placeholder="Enter your lastname"
+               label="Skill 2"
+               placeholder="Enter your skills"
             />
             <InputControl 
-               label="Title"
-               placeholder="Enter your title eg. Frontend Developer"
+               label="Skill 3"
+               placeholder="Enter your skills"
+            />
+            <InputControl 
+               label="Skill 4"
+               placeholder="Enter your skills"
+            />
+            <InputControl 
+               label="Skill 5"
+               placeholder="Enter your skills"
+            />
+            <InputControl 
+               label="Skill 6"
+               placeholder="Enter your skills"
             />
          </div>
          <div className="row">
             <InputControl 
-               label="Email Address"
-               placeholder="Enter your email address eg. miyudev@mail.com"
+               label="Interest 1"
+               placeholder="Enter your skills"
             />
-         </div>
-         <div className="row">
             <InputControl 
-               label="Mobile Number"
-               placeholder="Enter your phone number"
+               label="Interest 2"
+               placeholder="Enter your skills"
             />
-         </div>
-         <div className="row">
             <InputControl 
-               label="Linkedin Link"
-               placeholder="Enter your linkedin profile link"
+               label="Interest 3"
+               placeholder="Enter your skills"
             />
-         </div>
-         <div className="row">
             <InputControl 
-               label="Github Link"
-               placeholder="Enter your github profile link"
+               label="Interest 4"
+               placeholder="Enter your skills"
             />
-         </div>
-         <div className="row">
             <InputControl 
-               label="Location"
-               placeholder="Enter Github link of project"
+               label="Interest 5"
+               placeholder="Enter your skills"
+            />
+            <InputControl 
+               label="Interest 6"
+               placeholder="Enter your skills"
             />
          </div>
-
-         <div className="column">
-            <label>Enter your bio description</label>
-            <InputControl placeholder="Line 1" />
-            <InputControl placeholder="Line 2" />
-            <InputControl placeholder="Line 3" />
-         </div>
-      </div>
-   )
-
-   const summaryBody = (
-      <div className="detail">
-         <InputControl
-            label="Summary"
-            placeholder="Enter your objective / summary"
-         />
-      </div>
-   );
-
-   const otherBody = (
-      <div className="detail">
-         <InputControl
-            label="Other"
-            placeholder="Enter some other objective"
-         />
       </div>
    )
 
@@ -267,10 +250,6 @@ const Editor = (props) => {
             return eduBody;
          case sections.techno:
             return techBody;
-         case sections.summary:
-            return summaryBody;
-         case sections.other:
-            return otherBody;
             default: return null;
       }
    };
