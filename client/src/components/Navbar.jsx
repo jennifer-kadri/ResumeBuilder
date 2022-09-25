@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { menuItems } from "./menuItems";
+import MenuDrop from './MenuItems';
 import { Feather, User, LogOut } from "react-feather";
 
 const Navbar = () => {
@@ -47,13 +49,11 @@ const Navbar = () => {
                 </Button>
               {!isLoggedIn && (
                 <>
-                  <Div className="hide btn">
-                    <Button
-                      className="icon" 
-                      onClick={handleClick}
-                    ><User />
-                  </Button>
-                  </Div>
+                  <ul className="menus">
+                    {menuItems.map((menu, index) => {
+                      return <MenuDrop items={menu} key={index} />;
+                    })}
+                  </ul>
                   <Button className="btn">
                     <Link to="/login" className="signin">Login</Link>
                   </Button>
