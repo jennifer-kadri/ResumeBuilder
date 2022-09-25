@@ -489,32 +489,37 @@ li {
   border-bottom: 2px solid rgb(187, 225, 247);
 }
 
-#register .container {
+#register .container,
+#login .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 8rem;
   font-size: 1rem;
 }
-#register .container h1 {
+#register .container h1,
+#login .container h1 {
   background-clip: text;
   background-image: linear-gradient(to right, rgb(35, 156, 226), rgb(19, 105, 185), rgb(19, 105, 185), rgb(35, 156, 226));
   color: transparent;
   text-shadow: 12px 12px 12px rgb(255, 255, 255);
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
   transition: all 600ms ease;
 }
 @media screen and (max-width: 984px) {
-  #register .container h1 {
+  #register .container h1,
+#login .container h1 {
     font-size: 1.8rem;
   }
 }
-#register .container .alert-danger {
+#register .container .alert-danger,
+#login .container .alert-danger {
   color: rgb(226, 85, 85);
   font-size: 0.9rem;
   font-weight: 500;
 }
-#register .container .form {
+#register .container .form,
+#login .container .form {
   z-index: 6;
   top: 20px;
   display: flex;
@@ -523,9 +528,10 @@ li {
   font-size: 1.2rem;
   text-align: center;
   gap: 1rem;
-  margin: 0.5rem 0 2rem 0;
+  margin: 1rem 0 2rem 0;
 }
-#register .container .form .form-group .form-input {
+#register .container .form .form-group .form-input,
+#login .container .form .form-group .form-input {
   background: rgba(187, 225, 247, 0.6);
   border: 2px solid transparent;
   text-align: center;
@@ -534,15 +540,18 @@ li {
   border-radius: 4px;
   caret-color: rgb(96, 177, 224);
 }
-#register .container .form .form-group .form-input::placeholder {
+#register .container .form .form-group .form-input::placeholder,
+#login .container .form .form-group .form-input::placeholder {
   color: rgb(94, 94, 94);
 }
-#register .container .form .form-group .error {
+#register .container .form .form-group .error,
+#login .container .form .form-group .error {
   font-size: 0.9rem;
   font-weight: 500;
   color: rgb(226, 85, 85);
 }
-#register .container .form .btn {
+#register .container .form .btn,
+#login .container .form .btn {
   color: rgb(255, 255, 255);
   background-color: rgb(96, 177, 224);
   font-size: 1rem;
@@ -554,23 +563,46 @@ li {
   border-radius: 4px;
   cursor: pointer;
 }
-#register .account {
+#register .account,
+#login .account {
   z-index: 6;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#register .account a {
+#register .account a,
+#login .account a {
   font-weight: 500;
   transition: all 600ms ease;
   padding: 0.1rem 0.6rem;
 }
-#register .account a:hover {
+#register .account a:hover,
+#login .account a:hover {
   color: rgb(255, 255, 255);
   background: rgb(96, 177, 224);
   border-radius: 4px;
 }
-#register img {
+#register .infos img,
+#login .infos img {
+  position: absolute;
+  top: 650px;
+  left: 0;
+  margin: 0 auto;
+  z-index: 2;
+  opacity: 90%;
+  height: 288px;
+  transition: all 600ms ease;
+}
+@media screen and (max-width: 984px) {
+  #register .infos img,
+#login .infos img {
+    top: 700px;
+    left: 0;
+    height: 222px;
+  }
+}
+#register img,
+#login img {
   position: absolute;
   top: 600px;
   right: 0;
@@ -580,10 +612,15 @@ li {
   transition: all 600ms ease;
 }
 @media screen and (max-width: 984px) {
-  #register img {
+  #register img,
+#login img {
     top: 740px;
     height: 200px;
   }
+}
+
+.login .container {
+  margin-top: 4rem;
 }
 
 .inputCtrl.container {

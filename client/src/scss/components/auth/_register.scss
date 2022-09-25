@@ -1,4 +1,5 @@
-#register {
+#register,
+#login {
    .container {
       display: flex;
       flex-direction: column;
@@ -11,7 +12,7 @@
          background-image: linear-gradient(to right, $primary, $accent, $accent, $primary);
          color: transparent;
          text-shadow: 12px 12px 12px $light;
-         margin-bottom: 1rem;
+         margin-bottom: 1.4rem;
          transition: $transition-slow;
 
          @media screen and (max-width: 984px) {
@@ -34,7 +35,7 @@
          font-size: 1.2rem;
          text-align: center;
          gap: 1rem;
-         margin: 0.5rem 0 2rem 0;
+         margin: 1rem 0 2rem 0;
 
          .form-group {
             .form-input {
@@ -92,6 +93,26 @@
       }
    }
 
+   .infos {
+
+         img {
+         position: absolute;
+         top: 650px;
+         left: 0;
+         margin: 0 auto;
+         z-index: 2;
+         opacity: 90%;
+         height: 288px;
+         transition: $transition-slow;
+         
+         @media screen and (max-width: 984px) {
+            top: 700px;
+            left: 0;
+            height: 222px;
+         }
+      }
+   }
+
    img {
       position: absolute;
       top: 600px;
@@ -106,5 +127,11 @@
          height: 200px;
 
       }
+   }
+}
+
+.login {
+   .container {
+      margin-top: 4rem;
    }
 }
