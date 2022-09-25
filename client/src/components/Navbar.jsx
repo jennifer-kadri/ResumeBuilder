@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { menuItems } from "./menuItems";
-import MenuDrop from './MenuItems';
+import { menuItems } from "./Dropdown/_menuItems";
+import MenuItems from './Dropdown/MenuItems';
 import { Feather, User, LogOut } from "react-feather";
 
 const Navbar = () => {
@@ -18,16 +18,6 @@ const Navbar = () => {
       setIsLoggedIn(false)
     }
   }, [location, token]);
-
-  const handleClick = () => {
-    alert("It works");
-    {
-      <>
-      <Link to="/login" >Login</Link>
-      <Link to="/login" >Signup</Link>
-      </>
-    }
-  }
 
   return (
     <>
@@ -49,11 +39,18 @@ const Navbar = () => {
                 </Button>
               {!isLoggedIn && (
                 <>
-                  <ul className="menus">
+                  <List className="menus">
                     {menuItems.map((menu, index) => {
-                      return <MenuDrop items={menu} key={index} />;
+                      const depthLevel = 0;
+                      return (
+                        <MenuItems
+                          items={menu}
+                          key={index}
+                          depthLevel={depthLevel}
+                        />
+                      );
                     })}
-                  </ul>
+                  </List>
                   <Button className="btn">
                     <Link to="/login" className="signin">Login</Link>
                   </Button>
@@ -81,6 +78,7 @@ const NavBar = styled.nav``
 const Container = styled.div``
 const HeroWrapper = styled.div``
 const Div = styled.div``
+const List = styled.ul``
 const Brand = styled.h1`font-size: 1.4rem;`
 const Button = styled.small`word-break: break-word;`
 
