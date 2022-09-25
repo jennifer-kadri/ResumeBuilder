@@ -385,7 +385,7 @@ li {
 }
 @media screen and (max-width: 500px) {
   #navbar-main #navbar #navbelt .auth {
-    gap: 1rem;
+    gap: 0.7rem;
     padding: 0;
   }
 }
