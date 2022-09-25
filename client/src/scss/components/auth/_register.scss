@@ -1,5 +1,24 @@
 #register {
-   .form {
-      padding-top: 8rem;
+   .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 6rem;
+      font-size: 1rem;
+      .form {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         font-size: 1.2rem;
+
+         .form-input {
+            text-align: center;
+            font-size: 1.1rem;
+         }
+         .btn {
+            padding: 1rem 2rem;
+            cursor: pointer;
+         }
+      }
    }
 }
