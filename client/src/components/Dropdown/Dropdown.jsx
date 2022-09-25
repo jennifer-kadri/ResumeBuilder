@@ -11,7 +11,7 @@ const Dropdown = ({ submenus, dropdown, depthLevel }) => {
     >
       {submenus.map((submenu, index) => (
         <MenuItems
-          // className={submenu.cname}
+          className={submenu.cname}
           items={submenu}
           key={index}
           depthLevel={depthLevel}
