@@ -329,8 +329,7 @@ li {
   transition: all 600ms ease;
 }
 .header.container .left .heading span {
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   background-image: linear-gradient(to right, rgb(35, 156, 226), rgb(19, 105, 185), rgb(19, 105, 185), rgb(35, 156, 226));
   color: transparent;
   text-shadow: none;
@@ -490,6 +489,10 @@ li {
   border-bottom: 2px solid rgb(187, 225, 247);
 }
 
+#register .form {
+  padding-top: 8rem;
+}
+
 .inputCtrl.container {
   display: flex;
   flex-direction: column;
@@ -511,4 +514,6 @@ li {
 }
 .inputCtrl input:focus {
   border: 1px solid --primary;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

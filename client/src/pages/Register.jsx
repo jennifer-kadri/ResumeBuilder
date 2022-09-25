@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import AuthService from "../components/Auth/auth.service";
 
 const Register = ({ required, validEmail, validPassword, validUsername }) => {
    const [firstname, setFirstname] = useState("");
@@ -10,6 +11,7 @@ const Register = ({ required, validEmail, validPassword, validUsername }) => {
    const [password, setPassword] = useState("");
    const [confirmPassword, setConfirmPassword] = useState("");
    
+   const [message, setMessage] = useState("");
    const [submitted, setSubmitted] = useState(false);
    const [error, setError] = useState(false);
 
@@ -52,17 +54,25 @@ const Register = ({ required, validEmail, validPassword, validUsername }) => {
 
    const handleSubmit = (event) => {
       event.preventDefault();
-      if (email === "" || 
-         password === "" || 
-         confirmPassword === "" || 
-         firstname === "" || 
-         lastname === "" ||
-         username === ""
-      ) {
-         setError(true);
-      } else {
-         setSubmitted(true);
-         setError(false);
+
+      setMessage("");
+      setSubmitted(false);
+
+      if (!error) {
+         AuthService.register(firstname, lastname, username, email, password, confirmPassword).then(
+            (response) => {
+               console.log(response.data.message);
+               setSubmitted(true);
+            },
+            (error) => {
+               const Msg = (
+                  error.response && error.response.data && error.response.data.message
+               ) || error.message || error.toString();
+
+               setMessage(Msg);
+               setSubmitted(false);
+            }
+         )
       }
    };
 
