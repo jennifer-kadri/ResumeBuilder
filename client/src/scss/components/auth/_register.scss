@@ -5,24 +5,31 @@
       align-items: center;
       padding-top: 8rem;
       font-size: 1rem;
+      
+      h1 {
+         background-clip: text;
+         background-image: linear-gradient(to right, $primary, $accent, $accent, $primary);
+         color: transparent;
+         text-shadow: 12px 12px 12px $light;
+         margin-bottom: 1rem;
+      }
+
+      .alert-danger {
+         color: rgb(226, 85, 85);
+         font-size: 0.9rem;
+         font-weight: 500;
+      }           
 
       .form {
          display: flex;
          flex-direction: column;
          align-items: center;
          font-size: 1.2rem;
-         gap: 1.2rem;
-         margin: 2rem 0;
-
-         h1 {
-            background-clip: text;
-            background-image: linear-gradient(to right, $primary, $accent, $accent, $primary);
-            color: transparent;
-            text-shadow: 12px 12px 12px $light;
-         }
+         text-align: center;
+         gap: 1rem;
+         margin: 0.5rem 0 2rem 0;
 
          .form-group {
-            
             .form-input {
                background: rgb($light-blue, 0.6);
                border: 2px solid transparent;
@@ -35,13 +42,44 @@
                &::placeholder {
                   color: $gray;
                }
+            } 
+
+            .error {
+               font-size: 0.9rem;
+               font-weight: 500;
+               color: rgb(226, 85, 85);
             }
          }
          
          .btn {
+            color: $light;
+            background-color: $blue;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
             margin-top: 2rem;
             padding: 1rem 2rem;
+            text-transform: uppercase;
+            border-radius: 4px;
             cursor: pointer;
+         }
+      }
+   }
+
+   .account {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      a {
+         font-weight: 500;
+         transition: $transition-slow;
+         padding: 0.1rem 0.6rem;
+
+         &:hover {
+            color: $light;
+            background: $blue;
+            border-radius: 4px;
          }
       }
    }

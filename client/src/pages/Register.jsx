@@ -6,6 +6,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
+import Info from "../assets/info.svg"
 
 const required = (value) => {
    if (!value) {
@@ -136,6 +137,13 @@ const Register = (props) => {
                {!successful && (
                   <div className="div"><h1>Create your account</h1></div>
                )}
+               
+               {message && (
+                  <div className={successful ? "alert alert-success" : "alert alert-danger"} role="alert" >
+                       {message}
+                  </div>
+               )}
+
                <Form className="form" onSubmit={handleSubmit} ref={form}>
                   {!successful && (
                      <>
@@ -222,14 +230,6 @@ const Register = (props) => {
                   )}
                </Form>
 
-               {message && (
-                  <div className="form-group">
-                      <div className={successful ? "alert alert-success" : "alert alert-danger"} role="alert" >
-                          {message}
-                     </div>
-                  </div>
-               )}
-
                {!successful && (
                   <div className="account">
                      <span>Already have an account?</span>
@@ -243,6 +243,8 @@ const Register = (props) => {
                      <span>Welcome to Resume Builder {username}</span>
                   </div>
                )}
+
+               <img src={Info} alt="Resume" />
             </div>
          </div>
       </> 

@@ -496,19 +496,26 @@ li {
   padding-top: 8rem;
   font-size: 1rem;
 }
+#register .container h1 {
+  background-clip: text;
+  background-image: linear-gradient(to right, rgb(35, 156, 226), rgb(19, 105, 185), rgb(19, 105, 185), rgb(35, 156, 226));
+  color: transparent;
+  text-shadow: 12px 12px 12px rgb(255, 255, 255);
+  margin-bottom: 1rem;
+}
+#register .container .alert-danger {
+  color: rgb(226, 85, 85);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
 #register .container .form {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 1.2rem;
-  gap: 1.2rem;
-  margin: 2rem 0;
-}
-#register .container .form h1 {
-  background-clip: text;
-  background-image: linear-gradient(to right, rgb(35, 156, 226), rgb(19, 105, 185), rgb(19, 105, 185), rgb(35, 156, 226));
-  color: transparent;
-  text-shadow: 12px 12px 12px rgb(255, 255, 255);
+  text-align: center;
+  gap: 1rem;
+  margin: 0.5rem 0 2rem 0;
 }
 #register .container .form .form-group .form-input {
   background: rgba(187, 225, 247, 0.6);
@@ -522,10 +529,37 @@ li {
 #register .container .form .form-group .form-input::placeholder {
   color: rgb(94, 94, 94);
 }
+#register .container .form .form-group .error {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgb(226, 85, 85);
+}
 #register .container .form .btn {
+  color: rgb(255, 255, 255);
+  background-color: rgb(96, 177, 224);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
   margin-top: 2rem;
   padding: 1rem 2rem;
+  text-transform: uppercase;
+  border-radius: 4px;
   cursor: pointer;
+}
+#register .account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#register .account a {
+  font-weight: 500;
+  transition: all 600ms ease;
+  padding: 0.1rem 0.6rem;
+}
+#register .account a:hover {
+  color: rgb(255, 255, 255);
+  background: rgb(96, 177, 224);
+  border-radius: 4px;
 }
 
 .inputCtrl.container {
