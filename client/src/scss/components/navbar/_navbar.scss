@@ -50,11 +50,16 @@
 						&:hover {
 							color: $primary;
 						}
+					}
+				}
 
-						&.logout {
-							margin-left: 1.4rem;
-							margin-right: 3rem;
-						}
+				.logout {
+					margin-left: 1.4rem;
+					color: $light;
+
+					@media screen and (max-width: 680px) {
+						margin-left: 1.4rem;
+						margin-right: 3rem;
 					}
 				}
 				.create, .signup, .signin {

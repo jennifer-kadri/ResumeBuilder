@@ -195,9 +195,15 @@ li {
 #navbar-main #navbar #navbelt .auth .hide .icon:hover {
   color: rgb(35, 156, 226);
 }
-#navbar-main #navbar #navbelt .auth .hide .icon.logout {
+#navbar-main #navbar #navbelt .auth .logout {
   margin-left: 1.4rem;
-  margin-right: 3rem;
+  color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 680px) {
+  #navbar-main #navbar #navbelt .auth .logout {
+    margin-left: 1.4rem;
+    margin-right: 3rem;
+  }
 }
 #navbar-main #navbar #navbelt .auth .create, #navbar-main #navbar #navbelt .auth .signup, #navbar-main #navbar #navbelt .auth .signin {
   color: rgb(255, 255, 255);
