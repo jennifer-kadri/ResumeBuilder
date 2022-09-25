@@ -9,7 +9,7 @@ const Create = () => {
       workExp: "Work Experience",
       project: "Projects Developed",
       education: "Education Details",
-      achievements: "Achievements",
+      techno: "Technologies",
       extra: "Other",
    };
 
