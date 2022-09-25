@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { menuItems } from "./Dropdown/_menuItems";
 import MenuItems from './Dropdown/MenuItems';
-import { Feather, User, LogOut } from "react-feather";
+import { Feather, LogOut } from "react-feather";
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -46,6 +46,7 @@ const Navbar = () => {
                         <MenuItems
                           items={menu}
                           key={index}
+                          className={menu.cname}
                           depthLevel={depthLevel}
                         />
                       );
