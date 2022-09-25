@@ -39,7 +39,7 @@ const Navbar = () => {
                 </Button>
               {!isLoggedIn && (
                 <>
-                  <List className="menus">
+                  <List className="hide menus">
                     {menuItems.map((menu, index) => {
                       const depthLevel = 0;
                       return (
