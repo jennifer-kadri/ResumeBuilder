@@ -21,7 +21,6 @@ module.exports.signup = async (req, res, next) => {
       email: req.body.email,
       firstname: req.body.firstname,
       lastname: req.body.lastname,
-      username: req.body.username,
       password: bcrypt.hashSync(req.body.password, 8)
   })
   .then(data => {

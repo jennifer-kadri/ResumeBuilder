@@ -1,5 +1,5 @@
 const { verifySignUp, authJwt } = require("../middleware");
-const controller = require("../controllers/userController");
+const userController = require("../controllers/userController");
 const router = require("express").Router();
 
 module.exports = function (app) {
@@ -11,13 +11,13 @@ module.exports = function (app) {
       next();
    });
    
-   router.post("/signup", verifySignUp.checkDuplicateEmail, controller.signup);
-   router.post("/login", controller.login);
-   router.post("/logout", authJwt.verifyToken, controller.logout);
-   router.post("/refresh", controller.refreshToken);
+   router.post("/signup", verifySignUp.checkDuplicateEmail, userController.signup);
+   router.post("/login", userController.login);
+   router.post("/logout", authJwt.verifyToken, userController.logout);
+   router.post("/refresh", userController.refreshToken);
 
-   router.get("/user", authJwt.verifyToken, controller.userBoard);
-   router.get("/user-infos", authJwt.verifyToken, controller.getUserInfos);
+   router.get("/user", authJwt.verifyToken, userController.userBoard);
+   router.get("/user-infos", authJwt.verifyToken, userController.getUserInfos);
 
    app.use("/api/auth", router);
 };

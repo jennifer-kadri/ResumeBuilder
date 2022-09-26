@@ -12,9 +12,6 @@ module.exports = (sequelize, Sequelize) => {
        lastname: {
            type: Sequelize.STRING
        },
-       username: {
-           type: Sequelize.STRING
-       }
    });
    return User;
 };

@@ -49,7 +49,6 @@ async function initial() {
       password: bcrypt.hashSync("12345678", 8),
       firstname: 'Miyuna', 
       lastname: 'Aeri',
-      username: 'MiyuJenn'
    })
 }
 
