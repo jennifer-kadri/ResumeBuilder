@@ -2,6 +2,7 @@ const { verifySignUp, authJwt } = require("../middleware");
 const userController = require("../controllers/userController");
 const resumeController = require("../controllers/resumeController");
 const router = require("express").Router();
+const Router = require("express").Router();
 
 module.exports = function (app) {
    app.use((req, res, next) => {
@@ -23,7 +24,12 @@ module.exports = function (app) {
    app.use("/api/auth", router);
 
    /** RESUME */
-   router.post("/create", resumeController.createResume);
-   router.get("/list", resumeController.findAll);
+   Router.post("/create", resumeController.createResume);
+   Router.get("/list", resumeController.findAll);
+   Router.get("/list/:id", resumeController.findOne);
+   Router.put("/update/:id", authJwt.verifyToken, resumeController.update);
+   Router.delete("/delete/:id", authJwt.verifyToken, resumeController.delete);
+   Router.delete("/delete_all", authJwt.verifyToken, resumeController.deleteAll);
    
+   app.use("/api/resume/", Router);
 };

@@ -37,7 +37,7 @@ const Op = db.Sequelize.Op;
 db.sequelize.sync()
    .then(() => {
       // initial();
-      createResumeTable();  
+      // createResumeTable();  
       console.log("Database synced");
    })
    .catch((err) => {
