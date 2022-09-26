@@ -38,17 +38,6 @@ const validPassword = (value) => {
    };
 };
 
-const validUsername = (value) => {
-   console.log(value);
-   if (value === null | value === "") {
-      return (
-         <div>
-            The username is required.
-         </div>
-      );
-   };
-};
-
 const Register = (props) => {
    const navigate = useNavigate();
    const form = useRef();
@@ -56,7 +45,6 @@ const Register = (props) => {
 
    const [firstname, setFirstname] = useState("");
    const [lastname, setLastname] = useState("");
-   const [username, setUsername] = useState("");
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
    const [confirmPassword, setConfirmPassword] = useState("");
@@ -83,10 +71,6 @@ const Register = (props) => {
       setLastname(event.target.value)
    };
 
-   const handleUsername = (event) => {
-      setUsername(event.target.value)
-   };
-
    const handleEmail = (event) => {
       setEmail(event.target.value);
    };
@@ -109,7 +93,7 @@ const Register = (props) => {
       form.current.validateAll();
 
       if (!errorMessage) {
-         AuthService.register(firstname, lastname, username, email, password, confirmPassword).then(
+         AuthService.register(firstname, lastname, email, password, confirmPassword).then(
             (response) => {
                console.log(response.data.message);
                setMessage(response.data.message);
@@ -175,18 +159,6 @@ const Register = (props) => {
                            <Input 
                               type="text" 
                               className="form-input" 
-                              placeholder="Username"
-                              name="username"                             
-                              value={username} 
-                              onChange={handleUsername} 
-                              validations={[required, validUsername]}
-                           />
-                        </div>
-
-                        <div className="form-group">
-                           <Input 
-                              type="text" 
-                              className="form-input" 
                               placeholder="Email"
                               name="email"
                               value={email} 
@@ -240,7 +212,7 @@ const Register = (props) => {
                {successful && (
                   <div className="signed">
                      <h2>Registration successful ! </h2>
-                     <span>Welcome to Resume Builder {username}</span>
+                     <span>Welcome to Resume Builder {firstname}</span>
                   </div>
                )}
 

@@ -20,13 +20,18 @@ const Editor = (props) => {
       Object.keys(sections)[0]
     );
 
+   const handleFirstname = (event) => {
+      setFirstname(event.target.value);
+   };
+
+   const handleLastname = (event) => {
+      setLastname(event.target.value)
+   };
+
    const handleEmail = (event) => {
       setEmail(event.target.value);
    };
 
-   const handlePassword = (event) => {
-      setPassword(event.target.value);
-   };
 
    /** PERSONAL INFO DATA **/
    const infoBody = (

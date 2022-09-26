@@ -3,11 +3,10 @@ import { API_AUTH_URL } from "../../config";
 
 axios.defaults.withCredentials = true
 
-const register = (lastname, firstname, username, email, password, confirmPassword) => {
+const register = (lastname, firstname, email, password, confirmPassword) => {
   return axios.post(API_AUTH_URL + "signup", {
     firstname,
     lastname,
-    username,
     email,
     password,
     confirmPassword,

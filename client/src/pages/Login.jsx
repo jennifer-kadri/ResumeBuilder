@@ -48,7 +48,7 @@ const Login = () => {
                setLogin(true);
                setTimeout(() => {
                   navigate("/")
-               }, 2000)
+               }, 500)
             },
             (error) => {
                const resMessage = (
@@ -67,6 +67,13 @@ const Login = () => {
             <div className="container">
                <div className="div"><h1>Log onto your account</h1></div>
                <Form className="form" onSubmit={handleSubmit} ref={form}>
+                  
+                  {message && (
+                     <small className="alert alert-success" role="alert" >
+                        {message}
+                     </small>
+                  )}
+
                   <div className="form-group">
                      <Input 
                         type="text" 
@@ -92,12 +99,6 @@ const Login = () => {
                   <div className="auth">
                      <button type="submit" className="btn btn-submit">Register</button>
                   </div>
-
-                  {message && (
-                     <div className="alert alert-success" role="alert" >
-                        {message}
-                     </div>
-                  )}
 
                </Form>
 
