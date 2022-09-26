@@ -19,9 +19,9 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.user = require("./userModel.js") (sequelize, Sequelize);
+db.user = require("./user.model.js")(sequelize, Sequelize);
 db.refreshToken = require("./refreshToken.js")(sequelize, Sequelize);
-
+db.resume = require("./resumeModel.js")(sequelize, Sequelize);
 
 db.refreshToken.belongsTo(db.user, {
   foreignKey: "userId",

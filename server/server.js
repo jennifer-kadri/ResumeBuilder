@@ -30,17 +30,41 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 
 const db = require("./app/models");
 const User = db.user;
+const Resume = db.resume;
 const Op = db.Sequelize.Op;
 
 /** SYNC DB SEQUELIZE **/
 db.sequelize.sync()
    .then(() => {
-      // initial();  
+      // initial();
+      createResumeTable();  
       console.log("Database synced");
    })
    .catch((err) => {
       console.error("Error syncing database:" + err.message);
    });
+
+async function createResumeTable() {
+   await Resume.create({
+      firstname: "Miyuna",
+      lastname: "Aeri",
+      email: "miyuna@gmail.com",
+      phone: "0761058086",
+      title: "Web Developer Resume",
+      location: "Marseille",
+      linkedin: "https://fr.linkedin.com/in/jennifer-kadri",
+      github: "https://github.com/jennifer-kadri?tab=repositories",
+      company: "Epitech",
+      certificate: "N/A",
+      startDate: "2022-09-26 17:00:24",
+      endDate: "2022-09-26 17:00:24",
+      overview: "I love this job",
+      link: "N/A",
+      facility: "Perier",
+      skill: "JavaScrip",
+      hobbies: "Crochet",
+   })
+}
 
 async function initial() {
 

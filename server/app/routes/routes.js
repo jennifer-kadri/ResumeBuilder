@@ -1,6 +1,6 @@
 const { verifySignUp, authJwt } = require("../middleware");
 const userController = require("../controllers/userController");
-const createController = require("../controllers/createController");
+const resumeController = require("../controllers/resumeController");
 const router = require("express").Router();
 
 module.exports = function (app) {
@@ -20,7 +20,10 @@ module.exports = function (app) {
    router.get("/user", authJwt.verifyToken, userController.userBoard);
    router.get("/user-infos", authJwt.verifyToken, userController.getUserInfos);
 
-   router.all("/create");
-
    app.use("/api/auth", router);
+
+   /** RESUME */
+   router.post("/create", resumeController.createResume);
+   router.get("/list", resumeController.findAll);
+   
 };

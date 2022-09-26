@@ -1,24 +1,21 @@
 module.exports = (sequelize, Sequelize) => {
    const Resume = sequelize.define("resumes", {
       firstname: {
-         type: Sequelize.STRING,
+            type: Sequelize.STRING
       },
       lastname: {
-          type: Sequelize.STRING
+            type: Sequelize.STRING
       },
        email: {
-           type: Sequelize.STRING,
+            type: Sequelize.STRING
        },
        phone: {
-           type: Sequelize.INTEGER
+            type: Sequelize.INTEGER
        },
        title: {
-           type: Sequelize.STRING
+            type: Sequelize.STRING
        },
-       location: {
-         type: Sequelize.STRING,
-      },
-      linkedin: {
+       location: {      
             type: Sequelize.STRING
       },
       linkedin: {
@@ -28,10 +25,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
       },
       company: {
-         type: Sequelize.STRING,
+            type: Sequelize.STRING
       },
       certificate: {
-            type: Sequelize.
+            type: Sequelize.STRING
       },
       startDate: {
             type: Sequelize.DATE
@@ -40,7 +37,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DATE
       },
       overview: {
-         type: Sequelize.STRING,
+            type: Sequelize.STRING
       },
       link: {
             type: Sequelize.STRING
@@ -52,7 +49,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
       },
       hobbies: {
-         type: Sequelize.STRING,
+            type: Sequelize.STRING
       },
    });
    
