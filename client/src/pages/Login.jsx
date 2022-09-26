@@ -97,7 +97,13 @@ const Login = () => {
                      />
                   </div>
                   <div className="auth">
-                     <button type="submit" className="btn btn-submit" disabled={loading}>Register</button>
+                     <button 
+                        type="submit" 
+                        className="btn btn-submit" 
+                        disabled={loading}
+                     >
+                        Register
+                     </button>
                   </div>
 
                </Form>
