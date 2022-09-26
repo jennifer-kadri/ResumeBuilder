@@ -29,6 +29,13 @@ const Editor = (props) => {
       email: activeInformation?.detail?.email || "",
    });
 
+   const handlePointUpdate = (value, index) => {
+      const tempValues = { ...values };
+      if (!Array.isArray(tempValues.points)) tempValues.points = [];
+      tempValues.points[index] = value;
+      setValue(tempValues);
+   }
+
    /** WORK DATA **/
    const workExpBody = (
       <div className="detail">
