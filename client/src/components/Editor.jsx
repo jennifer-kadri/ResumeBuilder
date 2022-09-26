@@ -4,37 +4,84 @@ import { X } from "react-feather";
 // import styles from "./Editor.module.css";
 
 const Editor = (props) => {
-   const sections = props.sections;
-   const information = props.information;
+   const sections = props.sections
+
+   const [firstname, setFirstname] = useState("");
+   const [lastname, setLastname] = useState("");
+   const [email, setEmail] = useState("");
+   const [title, setTitle] = useState("");
+   const [location, setLocation] = useState("");
+   const [password, setPassword] = useState("");
+   const [message, setMessage] = useState("");
+   const [loading, setLoading] = useState(false);
+   const [login, setLogin] = useState(false);
 
    const [activeSectionKey, setActiveSectionKey] = useState(
       Object.keys(sections)[0]
-   );
-   const [activeInformation, setactiveInformation] = useState(
-      information[sections[Object.keys(sections)[0]]]
-   );
+    );
 
-   const [activeDetailIndex, setActiveDetailIndex] = useState(0);
-   const [sectionTitle, setSectionTitle] = useState(
-      sections[Object.keys(sections)[0]]
+   const handleEmail = (event) => {
+      setEmail(event.target.value);
+   };
+
+   const handlePassword = (event) => {
+      setPassword(event.target.value);
+   };
+
+   /** PERSONAL INFO DATA **/
+   const infoBody = (
+      <div className="detail">
+         <h4>Personal Informations</h4>
+         <div className="row">
+            <InputControl 
+               label="Firstname*"
+               placeholder="Enter your firstname"
+               required="required"
+            />
+            <InputControl 
+               label="Lastname"
+               placeholder="Enter your lastname"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Title"
+               placeholder="Enter your title eg. Frontend Developer"
+            />
+            <InputControl 
+               label="Location"
+               placeholder="Enter your location"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Email Address"
+               placeholder="Enter your email address"
+            />
+            <InputControl 
+               label="Mobile Number"
+               placeholder="Enter your phone number"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Linkedin Link"
+               placeholder="Enter your linkedin profile link"
+            />
+            <InputControl 
+               label="Github Link"
+               placeholder="Enter your github profile link"
+            />
+         </div>
+
+         <div className="column">
+            <label>Enter your bio description</label>
+            <InputControl placeholder="Line 1" />
+            <InputControl placeholder="Line 2" />
+            <InputControl placeholder="Line 3" />
+         </div>
+      </div>
    )
-
-   const [values, setValues] = useState({
-      firstname: activeInformation?.detail?.firstname || "",
-      lastname: activeInformation?.detail?.lastname || "",
-      title: activeInformation?.detail?.title || "",
-      linkedin: activeInformation?.detail?.linkedin || "",
-      github: activeInformation?.detail?.github || "",
-      phone: activeInformation?.detail?.phone || "",
-      email: activeInformation?.detail?.email || "",
-   });
-
-   const handlePointUpdate = (value, index) => {
-      const tempValues = { ...values };
-      if (!Array.isArray(tempValues.points)) tempValues.points = [];
-      tempValues.points[index] = value;
-      setValue(tempValues);
-   }
 
    /** WORK DATA **/
    const workExpBody = (
@@ -152,63 +199,8 @@ const Editor = (props) => {
       </div>
    )
 
-   /** PROJECT DATA **/
-   const infoBody = (
-      <div className="detail">
-         <h4>Personal Informations</h4>
-         <div className="row">
-            <InputControl 
-               label="Firstname*"
-               placeholder="Enter your firstname"
-               required="required"
-            />
-            <InputControl 
-               label="Lastname"
-               placeholder="Enter your lastname"
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Title"
-               placeholder="Enter your title eg. Frontend Developer"
-            />
-            <InputControl 
-               label="Location"
-               placeholder="Enter your location"
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Email Address"
-               placeholder="Enter your email address"
-            />
-            <InputControl 
-               label="Mobile Number"
-               placeholder="Enter your phone number"
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Linkedin Link"
-               placeholder="Enter your linkedin profile link"
-            />
-            <InputControl 
-               label="Github Link"
-               placeholder="Enter your github profile link"
-            />
-         </div>
-
-         <div className="column">
-            <label>Enter your bio description</label>
-            <InputControl placeholder="Line 1" />
-            <InputControl placeholder="Line 2" />
-            <InputControl placeholder="Line 3" />
-         </div>
-      </div>
-   )
-
-    /** PROJECT DATA **/
-    const techBody = (
+    /** DETAILS DATA **/
+    const details = (
       <div className="detail">
          <h4>Skills / Languages</h4>
          <div className="row">
@@ -282,7 +274,7 @@ const Editor = (props) => {
          case sections.education:
             return eduBody;
          case sections.techno:
-            return techBody;
+            return details;
             default: return null;
       }
    };
@@ -305,41 +297,11 @@ const Editor = (props) => {
          <InputControl 
             label="Section Title" 
             placeholder="Enter the section title" 
-            value={sectionTitle}
-            onChange={(event) => setSectionTitle(event.target.value)}
          />
-
-         <div className="chips">
-            {activeInformation?.details
-               ? activeInformation?.details.map((item, index) => (
-                  <div 
-                     className={`chip ${activeDetailIndex === index ? "active" : ""}`}
-                     key={item.title + index}
-                     onClick={() => setActiveDetail(index)}
-                  >
-                     <p>{sections[activeSectionKey]} {index + 1}</p>
-                     <X
-                        onClick={(event) => {
-                           event.stopPropagation();
-                           handleDeleteDetail(index);
-                        }}
-                     />
-                </div>
-              ))
-            : ""}
-          {activeInformation?.details &&
-          activeInformation?.details?.length > 0 ? (
-            <div className="new" onClick={handleAddNew}>
-              +New
-            </div>
-          ) : (
-            ""
-          )}
-        </div>
 
         {generateBody()}
       
-         <button onClick={handleSubmit}>Save</button>
+         <button>Save</button>
       </div>
     </div>
   )

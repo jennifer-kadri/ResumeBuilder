@@ -588,7 +588,7 @@ li {
   }
 }
 .create.container .toolbar button {
-  padding: 10px 16px;
+  padding: 8px 16px;
   border-radius: 5px;
   background-color: rgb(96, 177, 224);
   text-transform: uppercase;
@@ -618,6 +618,9 @@ li {
   width: 30px;
   border-radius: 50%;
   background-color: rgb(35, 156, 226);
+}
+.create.container .colors .active {
+  border: 2px solid rgb(0, 0, 0);
 }
 
 /** EDITOR **/
@@ -708,6 +711,27 @@ li {
 }
 .main .editor .detail .row > div {
   flex: 1;
+}
+.main .editor button {
+  margin: 0 auto;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: #239ce2;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: 200ms;
+}
+.main .editor button:active {
+  transform: translateY(2px);
 }
 
 .inputCtrl.container {
