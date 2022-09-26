@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
            type: Sequelize.STRING,
        },
        phone: {
-           type: Sequelize.STRING
+           type: Sequelize.INTEGER
        },
        title: {
            type: Sequelize.STRING
@@ -31,13 +31,13 @@ module.exports = (sequelize, Sequelize) => {
          type: Sequelize.STRING,
       },
       certificate: {
-            type: Sequelize.STRING
+            type: Sequelize.
       },
       startDate: {
-            type: Sequelize.STRING
+            type: Sequelize.DATE
       },
       endDate: {
-            type: Sequelize.STRING
+            type: Sequelize.DATE
       },
       overview: {
          type: Sequelize.STRING,
