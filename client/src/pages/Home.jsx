@@ -8,7 +8,7 @@ const Home = () => {
       <>
          <Header />
          <Main className="body container">
-            <Link to="/signup" className="heading">Create your resume</Link>
+            <Link to="/create" className="heading">Create your resume</Link>
          </Main>
       </> 
    )  
