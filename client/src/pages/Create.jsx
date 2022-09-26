@@ -5,12 +5,11 @@ import Editor from "../components/Editor";
 const Create = () => {
 
    const sections = {
-      basicInfo: "Personal Infos",
-      workExp: "Work Experience",
-      project: "Projects Developed",
-      education: "Education Details",
-      techno: "Technologies",
-      extra: "Other",
+      basicInfo: "Infos",
+      workExp: "Work",
+      project: "Projects",
+      education: "Education",
+      techno: "Details",
    };
 
    const colors = ["239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
@@ -18,6 +17,9 @@ const Create = () => {
   return (
       <div className="create container">
          <div className="toolbar">
+            <div className="hide heading">
+               <h1>Create your resume</h1>
+            </div>
             <div className="colors">
                {colors.map((item) => ( 
                      <span
@@ -26,6 +28,9 @@ const Create = () => {
                         className="color"
                      />
                   ))}
+            </div>
+            <div className="show heading">
+               <h1>Create your resume</h1>
             </div>
             <button>Download CV <ArrowDown /></button>
          </div>

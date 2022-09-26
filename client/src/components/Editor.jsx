@@ -1,26 +1,46 @@
 import React, { useState } from 'react'
 import InputControl from './InputControl';
+import { X } from "react-feather";
+// import styles from "./Editor.module.css";
 
 const Editor = (props) => {
-
    const sections = props.sections;
+   const information = props.information;
 
-   const [activeSection, setActiveSection] = useState(Object.keys(sections)[0]
+   const [activeSectionKey, setActiveSectionKey] = useState(
+      Object.keys(sections)[0]
    );
+   const [activeInformation, setactiveInformation] = useState(
+      information[sections[Object.keys(sections)[0]]]
+   );
+
+   const [activeDetailIndex, setActiveDetailIndex] = useState(0);
+   const [sectionTitle, setSectionTitle] = useState(
+      sections[Object.keys(sections)[0]]
+   )
+
+   const [values, setValues] = useState({
+      firstname: activeInformation?.detail?.firstname || "",
+      lastname: activeInformation?.detail?.lastname || "",
+      title: activeInformation?.detail?.title || "",
+      linkedin: activeInformation?.detail?.linkedin || "",
+      github: activeInformation?.detail?.github || "",
+      phone: activeInformation?.detail?.phone || "",
+      email: activeInformation?.detail?.email || "",
+   });
 
    /** WORK DATA **/
    const workExpBody = (
       <div className="detail">
+         <h4>Work Experiences</h4>
          <div className="row">
             <InputControl 
                label="Title"
                placeholder="Enter title eg. Frontend Developer"
             />
-         </div>
-         <div className="row">
             <InputControl 
                label="Company Name"
-               placeholder="Enter company name eg. YoungTechBusiness"
+               placeholder="Enter company name"
             />
          </div>
          <div className="row">
@@ -28,8 +48,6 @@ const Editor = (props) => {
                label="Certificate Link"
                placeholder="Enter certificate link"
             />
-         </div>
-         <div className="row">
             <InputControl 
                label="Location"
                placeholder="Enter location eg. Remote"
@@ -41,10 +59,9 @@ const Editor = (props) => {
                type="date"
                placeholder="Enter start date of work"
             />
-         </div>
-         <div className="row">
             <InputControl 
                label="End Date"
+               type="date"
                placeholder="Enter end date of work"
             />
          </div>
@@ -61,13 +78,12 @@ const Editor = (props) => {
    /** PROJECT DATA **/
    const projectBody = (
       <div className="detail">
+         <h4>Projects Details</h4>
          <div className="row">
             <InputControl 
                label="Title"
                placeholder="Enter title eg. Chat Application"
             />
-         </div>
-         <div className="row">
             <InputControl 
                label="Overview"
                placeholder="Enter basic overview of project"
@@ -78,8 +94,6 @@ const Editor = (props) => {
                label="Deployed Link"
                placeholder="Enter deployment link if existing"
             />
-         </div>
-         <div className="row">
             <InputControl 
                label="Location"
                placeholder="Enter Github link of project"
@@ -91,6 +105,7 @@ const Editor = (props) => {
             <InputControl placeholder="Line 1" />
             <InputControl placeholder="Line 2" />
             <InputControl placeholder="Line 3" />
+            <InputControl placeholder="Line 4" />
          </div>
       </div>
    )
@@ -98,26 +113,33 @@ const Editor = (props) => {
    /** EDUCATION DATA **/
    const eduBody = (
       <div className="detail">
+         <h4>Education Informations</h4>
          <div className="row">
             <InputControl 
                label="Title"
-               placeholder="Enter title eg. Education"
+               placeholder="Enter title eg. Bachelor"
             />
-         </div>
             <InputControl 
                label="College/School Name"
                placeholder="Enter name of your college/school"
             />
+         </div>
          <div className="row">
             <InputControl 
                label="Start Date"
+               type="date"
+               placeholder="Enter start date this education"
+            />
+            <InputControl 
+               label="End Date"
+               type="date"
                placeholder="Enter start date this education"
             />
          </div>
          <div className="row">
             <InputControl 
                label="Location"
-               placeholder="Enter end date of this education"
+               placeholder="Enter the location of this education"
             />
          </div>
       </div>
@@ -126,27 +148,33 @@ const Editor = (props) => {
    /** PROJECT DATA **/
    const infoBody = (
       <div className="detail">
+         <h4>Personal Informations</h4>
          <div className="row">
             <InputControl 
-               label="Firstname"
+               label="Firstname*"
                placeholder="Enter your firstname"
+               required="required"
             />
             <InputControl 
                label="Lastname"
                placeholder="Enter your lastname"
             />
+         </div>
+         <div className="row">
             <InputControl 
                label="Title"
                placeholder="Enter your title eg. Frontend Developer"
+            />
+            <InputControl 
+               label="Location"
+               placeholder="Enter your location"
             />
          </div>
          <div className="row">
             <InputControl 
                label="Email Address"
-               placeholder="Enter your email address eg. miyudev@mail.com"
+               placeholder="Enter your email address"
             />
-         </div>
-         <div className="row">
             <InputControl 
                label="Mobile Number"
                placeholder="Enter your phone number"
@@ -157,17 +185,9 @@ const Editor = (props) => {
                label="Linkedin Link"
                placeholder="Enter your linkedin profile link"
             />
-         </div>
-         <div className="row">
             <InputControl 
                label="Github Link"
                placeholder="Enter your github profile link"
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Location"
-               placeholder="Enter Github link of project"
             />
          </div>
 
@@ -183,63 +203,69 @@ const Editor = (props) => {
     /** PROJECT DATA **/
     const techBody = (
       <div className="detail">
+         <h4>Skills / Languages</h4>
          <div className="row">
             <InputControl 
                label="Skill 1"
-               placeholder="Enter your skills"
+               placeholder="Enter your skill"
             />
             <InputControl 
                label="Skill 2"
-               placeholder="Enter your skills"
+               placeholder="Enter your skill"
             />
             <InputControl 
                label="Skill 3"
-               placeholder="Enter your skills"
-            />
-            <InputControl 
-               label="Skill 4"
-               placeholder="Enter your skills"
-            />
-            <InputControl 
-               label="Skill 5"
-               placeholder="Enter your skills"
-            />
-            <InputControl 
-               label="Skill 6"
-               placeholder="Enter your skills"
+               placeholder="Enter your skill"
             />
          </div>
          <div className="row">
             <InputControl 
+               label="Skill 4"
+               placeholder="Enter your skill"
+            />
+            <InputControl 
+               label="Skill 5"
+               placeholder="Enter your skill"
+            />
+            <InputControl 
+               label="Skill 6"
+               placeholder="Enter your skill"
+            />
+         </div>
+         <h4>Interests / Hobbies </h4>
+         <div className="row">
+            <InputControl 
                label="Interest 1"
-               placeholder="Enter your skills"
+               placeholder="Enter your interest"
             />
             <InputControl 
                label="Interest 2"
-               placeholder="Enter your skills"
+               placeholder="Enter your interest"
             />
             <InputControl 
                label="Interest 3"
-               placeholder="Enter your skills"
+               placeholder="Enter your interest"
             />
+         </div>
+         <div className="row">
             <InputControl 
                label="Interest 4"
-               placeholder="Enter your skills"
+               placeholder="Enter your interest"
             />
             <InputControl 
                label="Interest 5"
-               placeholder="Enter your skills"
+               placeholder="Enter your interest"
             />
             <InputControl 
                label="Interest 6"
-               placeholder="Enter your skills"
+               placeholder="Enter your interest"
             />
          </div>
       </div>
    )
 
    const generateBody = () => {
-      switch(sections[activeSection]) {
+      switch(sections[activeSectionKey]) {
          case sections.basicInfo:
             return infoBody;
          case sections.workExp:
@@ -255,13 +281,13 @@ const Editor = (props) => {
    };
 
   return (
-    <div className="editor container">
+    <div className="editor">
       <div className="header">
          {Object.keys(sections)?.map((key) => (
             <div 
-               className={`"section" ${activeSection === key ? "active" : " "}`} 
+               className={`section ${activeSectionKey === key ? "active" : " "}`} 
                key={key}
-               onClick={() => setActiveSection(key)}
+               onClick={() => setActiveSectionKey(key)}
             >
                {sections[key]}
             </div>
@@ -270,10 +296,43 @@ const Editor = (props) => {
 
       <div className="body">
          <InputControl 
-            label="Title" 
-            placeholder="Enter your title" 
+            label="Section Title" 
+            placeholder="Enter the section title" 
+            value={sectionTitle}
+            onChange={(event) => setSectionTitle(event.target.value)}
          />
-         {generateBody()}
+
+         <div className="chips">
+            {activeInformation?.details
+               ? activeInformation?.details.map((item, index) => (
+                  <div 
+                     className={`chip ${activeDetailIndex === index ? "active" : ""}`}
+                     key={item.title + index}
+                     onClick={() => setActiveDetail(index)}
+                  >
+                     <p>{sections[activeSectionKey]} {index + 1}</p>
+                     <X
+                        onClick={(event) => {
+                           event.stopPropagation();
+                           handleDeleteDetail(index);
+                        }}
+                     />
+                </div>
+              ))
+            : ""}
+          {activeInformation?.details &&
+          activeInformation?.details?.length > 0 ? (
+            <div className="new" onClick={handleAddNew}>
+              +New
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+
+        {generateBody()}
+      
+         <button onClick={handleSubmit}>Save</button>
       </div>
     </div>
   )

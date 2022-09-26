@@ -7,21 +7,21 @@
 
    label {
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 0.98rem;
    }
    
    input {
       border: 1px solid #cccccc;
       outline: none;
       padding: 10px 12px;
-      font-size: 1rem;
+      font-size: 0.9rem;
       border-radius: 5px;
    
       &:hover {
          border: 1px solid #adadad;
       }
       &:focus {
-         border: 1px solid --primary;
+         border: 1px solid $light-blue;
       }
    }
 }
