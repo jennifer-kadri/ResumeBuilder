@@ -482,7 +482,13 @@ li {
   padding: 1rem 2rem;
   text-transform: uppercase;
   border-radius: 4px;
+  transition: all 600ms ease;
   cursor: pointer;
+}
+#register .container .form .btn:hover, #register .container .form .btn:active,
+#login .container .form .btn:hover,
+#login .container .form .btn:active {
+  transform: translateY(-4px);
 }
 #register .account,
 #login .account {

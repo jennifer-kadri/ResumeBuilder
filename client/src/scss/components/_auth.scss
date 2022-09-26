@@ -69,7 +69,13 @@
             padding: 1rem 2rem;
             text-transform: uppercase;
             border-radius: 4px;
+            transition: $transition-slow;
             cursor: pointer;
+
+            &:hover,
+            &:active {
+               transform: translateY(-4px);
+            }
          }
       }
    }
