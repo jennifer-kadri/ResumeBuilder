@@ -1,6 +1,21 @@
-import React, { useState } from 'react'
-import InputControl from './InputControl';
+import React, { useState } from "react";
+import InputControl from "./InputControl";
+import { InfoBody } from "./Content/Infos";
+import { WorkExpBody } from "./Content/WorkExp";
+import { ProjectBody } from "./Content/Projects";
+import { EduBody } from "./Content/Education";
+import { ExtraDetails } from "./Content/ExtraDetails";
 import { X } from "react-feather";
+
+const required = (value) => {
+   if (!value) {
+      return (
+         <div className="error">
+            This field is required.
+         </div>
+      );
+   };
+};
 
 const Editor = (props) => {
    const sections = props.sections
@@ -18,157 +33,9 @@ const Editor = (props) => {
       Object.keys(sections)[0]
     );
 
-   const handleFirstname = (event) => {
-      setFirstname(event.target.value);
-   };
-
-   const handleLastname = (event) => {
-      setLastname(event.target.value)
-   };
-
-   const handleEmail = (event) => {
-      setEmail(event.target.value);
-   };
-
-   const handlePhone = (event) => {
-      setPhone(event.target.value);
-   };
-
-   const handleTitle = (event) => {
-      setTitle(event.target.value)
-   };
-
-   const handleLocation = (event) => {
-      setLocation(event.target.value);
-   };
-
-   const handleLinkedin = (event) => {
-      setLinkedin(event.target.value);
-   }
-
-   const handleGithub = (event) => {
-      setGithub(event.target.value);
-   }
-
    const handleSubmit = () => {
       console.log("it works");
    }
-
-   /** PERSONAL INFO DATA **/
-   const infoBody = (
-      <div className="detail">
-         <h4>Personal Informations</h4>
-         <div className="row">
-            <InputControl 
-               label="Firstname*"
-               placeholder="Enter your firstname"
-               value={firstname}
-               onChange={handleFirstname}
-            />
-            <InputControl 
-               label="Lastname"
-               placeholder="Enter your lastname"
-               value={lastname}
-               onChange={handleLastname}
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Title"
-               placeholder="Enter your title eg. Frontend Developer"
-               value={title}
-               onChange={handleTitle}
-            />
-            <InputControl 
-               label="Location"
-               placeholder="Enter your location"
-               value={location}
-               onChange={handleLocation}
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Email Address"
-               placeholder="Enter your email address"
-               value={email}
-               onChange={handleEmail}
-            />
-            <InputControl 
-               label="Mobile Number"
-               placeholder="Enter your phone number"
-               value={phone}
-               onChange={handlePhone}
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Linkedin Link"
-               placeholder="Enter your linkedin profile link"
-               value={linkedin}
-               onChange={handleLinkedin}
-            />
-            <InputControl 
-               label="Github Link"
-               placeholder="Enter your github profile link"
-               value={github}
-               onChange={handleGithub}
-            />
-         </div>
-
-         <div className="column">
-            <label>Enter your bio description</label>
-            <InputControl placeholder="Line 1" />
-            <InputControl placeholder="Line 2" />
-            <InputControl placeholder="Line 3" />
-         </div>
-      </div>
-   )
-
-   /** WORK DATA **/
-   const workExpBody = (
-      <div className="detail">
-         <h4>Work Experiences</h4>
-         <div className="row">
-            <InputControl 
-               label="Title"
-               placeholder="Enter title eg. Frontend Developer"
-            />
-            <InputControl 
-               label="Company Name"
-               placeholder="Enter company name"
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Certificate Link"
-               placeholder="Enter certificate link"
-            />
-            <InputControl 
-               label="Location"
-               placeholder="Enter location eg. Remote"
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Start Date"
-               type="date"
-               placeholder="Enter start date of work"
-            />
-            <InputControl 
-               label="End Date"
-               type="date"
-               placeholder="Enter end date of work"
-            />
-         </div>
-
-         <div className="column">
-            <label>Enter work description</label>
-            <InputControl placeholder="Line 1" />
-            <InputControl placeholder="Line 2" />
-            <InputControl placeholder="Line 3" />
-         </div>
-      </div>
-   )
 
    /** PROJECT DATA **/
    const projectBody = (
@@ -307,15 +174,15 @@ const Editor = (props) => {
    const generateBody = () => {
       switch(sections[activeSectionKey]) {
          case sections.basicInfo:
-            return infoBody;
+            return <InfoBody />;
          case sections.workExp:
-            return workExpBody;
+            return <WorkExpBody />;
          case sections.project:
-            return projectBody;
+            return <ProjectBody />;
          case sections.education:
-            return eduBody;
+            return <EduBody />;
          case sections.details:
-            return details;
+            return <ExtraDetails />;
             default: return null;
       }
    };
