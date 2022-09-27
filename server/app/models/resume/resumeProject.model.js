@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-   const ResumeInfo = sequelize.define("resume_project", {
+   const ResumeProject = sequelize.define("resume_project", {
        title: {
             type: Sequelize.STRING
        },
@@ -14,5 +14,5 @@ module.exports = (sequelize, Sequelize) => {
       },
    });
    
-   return ResumeInfo;
+   return ResumeProject;
 };
