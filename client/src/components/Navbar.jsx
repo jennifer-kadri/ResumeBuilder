@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { menuItems } from "./Dropdown/_menuItems";
 import MenuItems from './Dropdown/MenuItems';
 import { Feather, LogOut } from "react-feather";
-import AuthService from "../components/Auth/auth.service"
+import AuthService from "../components/_Services/auth.service"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -49,14 +49,14 @@ const Navbar = () => {
             </Brand>
 
               <Div className="auth">
+              {!isLoggedIn && (
+              <>
                 <Button className="hide btn">
                   <Link to="/create" className="icon"><Feather /></Link>
                 </Button>
                 <Button className="btn">
                   <Link to="/create" className="create">Create Resume</Link> 
                 </Button>
-              {!isLoggedIn && (
-                <>
                   <List className="hide menus">
                     {menuItems.map((menu, index) => {
                       const depthLevel = 0;
@@ -80,6 +80,12 @@ const Navbar = () => {
               )}
               {isLoggedIn && (
                 <>
+                  <Button className="hide btn">
+                    <Link to="/create" className="icon"><Feather /></Link>
+                  </Button>
+                  <Button className="btn">
+                    <Link to="/create" className="create">Create Resume</Link> 
+                  </Button>
                   <Button className="btn">
                     <Link to="/" className="icon logout" onClick={handleLogout} ><LogOut /></Link>
                   </Button>

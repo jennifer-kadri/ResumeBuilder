@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import styled from "styled-components";
-import AuthService from "../components/Auth/auth.service";
+import AuthService from "../components/_Services/auth.service";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import Info from "../assets/infos.svg"
