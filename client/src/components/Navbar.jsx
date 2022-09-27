@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { menuItems } from "./Dropdown/_menuItems";
 import MenuItems from './Dropdown/MenuItems';
 import { Feather, LogOut } from "react-feather";
-import AuthService from "../components/_Services/auth.service"
+import AuthService from "./Axios/auth.service"
 
 const Navbar = () => {
   const navigate = useNavigate();
