@@ -2,12 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-
-1. **React** for Frontend.
-2. **NodeJs, Express, Mysql, Sequelize** for Backend.
-2. **SCSS** for styling.
-
-
 ## Available Scripts
 
 In the project directory, you can run:
