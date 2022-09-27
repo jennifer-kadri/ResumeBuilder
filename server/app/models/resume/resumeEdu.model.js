@@ -1,9 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
    const ResumeEdu = sequelize.define("resume_edu", {
-       title: {
+      product_id: {
+            type: Sequelize.INTEGER
+      },
+      title: {
             type: Sequelize.STRING
-       },
-       name: {      
+      },
+      name: {      
             type: Sequelize.STRING
       },
       startDate: {
