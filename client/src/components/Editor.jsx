@@ -50,6 +50,10 @@ const Editor = (props) => {
       setGithub(event.target.value);
    }
 
+   const handleSubmit = () => {
+      console.log("it works");
+   }
+
    /** PERSONAL INFO DATA **/
    const infoBody = (
       <div className="detail">
@@ -338,7 +342,7 @@ const Editor = (props) => {
 
         {generateBody()}
       
-         <button>Save</button>
+         <button onClick={handleSubmit}>Save</button>
       </div>
     </div>
   )

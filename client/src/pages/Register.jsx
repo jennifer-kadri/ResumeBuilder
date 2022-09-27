@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../components/Auth/auth.service";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 import Info from "../assets/info.svg"
 
@@ -41,7 +40,6 @@ const validPassword = (value) => {
 const Register = (props) => {
    const navigate = useNavigate();
    const form = useRef();
-   const checkBtn = useRef();
 
    const [firstname, setFirstname] = useState("");
    const [lastname, setLastname] = useState("");
