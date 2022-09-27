@@ -9,12 +9,11 @@ const Editor = (props) => {
    const [firstname, setFirstname] = useState("");
    const [lastname, setLastname] = useState("");
    const [email, setEmail] = useState("");
+   const [phone, setPhone] = useState("");
    const [title, setTitle] = useState("");
    const [location, setLocation] = useState("");
-   const [password, setPassword] = useState("");
-   const [message, setMessage] = useState("");
-   const [loading, setLoading] = useState(false);
-   const [login, setLogin] = useState(false);
+   const [linkedin, setLinkedin] = useState("");
+   const [github, setGithub] = useState("");
 
    const [activeSectionKey, setActiveSectionKey] = useState(
       Object.keys(sections)[0]
@@ -32,6 +31,25 @@ const Editor = (props) => {
       setEmail(event.target.value);
    };
 
+   const handlePhone = (event) => {
+      setPhone(event.target.value);
+   };
+
+   const handleTitle = (event) => {
+      setTitle(event.target.value)
+   };
+
+   const handleLocation = (event) => {
+      setLocation(event.target.value);
+   };
+
+   const handleLinkedin = (event) => {
+      setLinkedin(event.target.value);
+   }
+
+   const handleGithub = (event) => {
+      setGithub(event.target.value);
+   }
 
    /** PERSONAL INFO DATA **/
    const infoBody = (
@@ -41,41 +59,48 @@ const Editor = (props) => {
             <InputControl 
                label="Firstname*"
                placeholder="Enter your firstname"
-               required="required"
+               value={firstname}
             />
             <InputControl 
                label="Lastname"
                placeholder="Enter your lastname"
+               value={lastname}
             />
          </div>
          <div className="row">
             <InputControl 
                label="Title"
                placeholder="Enter your title eg. Frontend Developer"
+               value={title}
             />
             <InputControl 
                label="Location"
                placeholder="Enter your location"
+               value={location}
             />
          </div>
          <div className="row">
             <InputControl 
                label="Email Address"
                placeholder="Enter your email address"
+               value={email}
             />
             <InputControl 
                label="Mobile Number"
                placeholder="Enter your phone number"
+               value={phone}
             />
          </div>
          <div className="row">
             <InputControl 
                label="Linkedin Link"
                placeholder="Enter your linkedin profile link"
+               value={linkedin}
             />
             <InputControl 
                label="Github Link"
                placeholder="Enter your github profile link"
+               value={github}
             />
          </div>
 
