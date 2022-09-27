@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-   const Resume = sequelize.define("resumes", {
+   const ResumeInfo = sequelize.define("resume_info", {
       firstname: {
             type: Sequelize.STRING
       },
@@ -24,34 +24,7 @@ module.exports = (sequelize, Sequelize) => {
       github: {
             type: Sequelize.STRING
       },
-      company: {
-            type: Sequelize.STRING
-      },
-      certificate: {
-            type: Sequelize.STRING
-      },
-      startDate: {
-            type: Sequelize.DATE
-      },
-      endDate: {
-            type: Sequelize.DATE
-      },
-      overview: {
-            type: Sequelize.STRING
-      },
-      link: {
-            type: Sequelize.STRING
-      },
-      facility: {
-            type: Sequelize.STRING
-      },
-      skill: {
-            type: Sequelize.STRING
-      },
-      hobbies: {
-            type: Sequelize.STRING
-      },
    });
    
-   return Resume;
+   return ResumeInfo;
 };
