@@ -1,5 +1,8 @@
 module.exports = (sequelize, Sequelize) => {
    const ResumeWork = sequelize.define("resume_work", {
+      product_id: {
+         type: Sequelize.INTEGER
+      },
       title: {
          type: Sequelize.STRING
       },
