@@ -49,14 +49,14 @@ const Navbar = () => {
             </Brand>
 
               <Div className="auth">
-              {!isLoggedIn && (
-              <>
-                <Button className="hide btn">
+                {/* <Button className="hide btn">
                   <Link to="/create" className="icon"><Feather /></Link>
                 </Button>
                 <Button className="btn">
                   <Link to="/create" className="create">Create Resume</Link> 
-                </Button>
+                </Button> */}
+              {!isLoggedIn && (
+                <>
                   <List className="hide menus">
                     {menuItems.map((menu, index) => {
                       const depthLevel = 0;
