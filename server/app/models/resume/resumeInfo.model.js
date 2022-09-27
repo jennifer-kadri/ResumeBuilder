@@ -3,7 +3,6 @@ module.exports = (sequelize, Sequelize) => {
       product_id: {
             type: Sequelize.INTEGER
       },
-
       firstname: {
             type: Sequelize.STRING
       },

@@ -1,10 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
    const ResumeProject = sequelize.define("resume_project", {
-       title: {
-            type: Sequelize.STRING
-       },
-       overview: {      
-            type: Sequelize.STRING
+      product_id: {
+            type: Sequelize.INTEGER
+      },
+      title: {
+           type: Sequelize.STRING
+      },
+      overview: {      
+           type: Sequelize.STRING
       },
       link: {
             type: Sequelize.STRING
