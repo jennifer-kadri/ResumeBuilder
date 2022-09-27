@@ -1,5 +1,8 @@
 module.exports = (sequelize, Sequelize) => {
    const ResumeExtra = sequelize.define("resume_extra", {
+      product_id: {
+         type: Sequelize.INTEGER
+      },
       skill_1: {
          type: Sequelize.STRING
       },
