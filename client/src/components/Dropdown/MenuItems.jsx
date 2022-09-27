@@ -101,7 +101,7 @@ const MenuItems = ({ items, depthLevel }) => {
    );
 };
 
-const List  = styled.li``
+const List  = styled.ul``
 const Button = styled.button``
 const Span = styled.span``
 
