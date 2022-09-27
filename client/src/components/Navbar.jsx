@@ -49,48 +49,42 @@ const Navbar = () => {
             </Brand>
 
               <Div className="auth">
-                {/* <Button className="hide btn">
-                  <Link to="/create" className="icon"><Feather /></Link>
-                </Button>
-                <Button className="btn">
-                  <Link to="/create" className="create">Create Resume</Link> 
-                </Button> */}
-              {!isLoggedIn && (
-                <>
-                  <List className="hide menus">
-                    {menuItems.map((menu, index) => {
-                      const depthLevel = 0;
-                      return (
-                        <MenuItems
-                          items={menu}
-                          key={index}
-                          className={menu.cname}
-                          depthLevel={depthLevel}
-                        />
-                      );
-                    })}
-                  </List>
-                  <Button className="btn">
-                    <Link to="/login" className="signin">Login</Link>
-                  </Button>
-                  <Button className="btn">
-                    <Link to="/signup" className="signup">Signup</Link>
-                  </Button>
-                </>
-              )}
-              {isLoggedIn && (
-                <>
-                  <Button className="hide btn">
-                    <Link to="/create" className="icon"><Feather /></Link>
-                  </Button>
-                  <Button className="btn">
-                    <Link to="/create" className="create">Create Resume</Link> 
-                  </Button>
-                  <Button className="btn">
-                    <Link to="/" className="icon logout" onClick={handleLogout} ><LogOut /></Link>
-                  </Button>
-                </>
-              )}
+                {!isLoggedIn && (
+                  <>
+                    <List className="hide menus">
+                      {menuItems.map((menu, index) => {
+                        const depthLevel = 0;
+                        return (
+                          <MenuItems
+                            items={menu}
+                            key={index}
+                            className={menu.cname}
+                            depthLevel={depthLevel}
+                          />
+                        );
+                      })}
+                    </List>
+                    <Button className="btn">
+                      <Link to="/login" className="signin">Login</Link>
+                    </Button>
+                    <Button className="btn">
+                      <Link to="/signup" className="signup">Signup</Link>
+                    </Button>
+                  </>
+                )}
+                {isLoggedIn && (
+                  <>
+                    <Button className="hide btn">
+                      <Link to="/create" className="icon"><Feather /></Link>
+                    </Button>
+                    <Button className="btn">
+                      <Link to="/create" className="create">Create Resume</Link> 
+                    </Button>
+                    <Button className="btn">
+                      <Link to="/" className="icon logout" onClick={handleLogout} ><LogOut /></Link>
+                    </Button>
+                  </>
+                )}
             </Div>
           </HeroWrapper>
         </Container>
