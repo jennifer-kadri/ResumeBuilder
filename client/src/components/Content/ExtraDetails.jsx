@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import InputControl from '../InputControl';
 
-export const EduBody = (props) => {
+export const ExtraDetails = (props) => {
 
    const [firstname, setFirstname] = useState("");
    const [lastname, setLastname] = useState("");
