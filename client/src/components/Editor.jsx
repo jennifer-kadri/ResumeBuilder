@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import InputControl from './InputControl';
 import { X } from "react-feather";
-// import styles from "./Editor.module.css";
 
 const Editor = (props) => {
    const sections = props.sections
@@ -60,11 +59,13 @@ const Editor = (props) => {
                label="Firstname*"
                placeholder="Enter your firstname"
                value={firstname}
+               onChange={handleFirstname}
             />
             <InputControl 
                label="Lastname"
                placeholder="Enter your lastname"
                value={lastname}
+               onChange={handleLastname}
             />
          </div>
          <div className="row">
@@ -72,11 +73,13 @@ const Editor = (props) => {
                label="Title"
                placeholder="Enter your title eg. Frontend Developer"
                value={title}
+               onChange={handleTitle}
             />
             <InputControl 
                label="Location"
                placeholder="Enter your location"
                value={location}
+               onChange={handleLocation}
             />
          </div>
          <div className="row">
@@ -84,11 +87,13 @@ const Editor = (props) => {
                label="Email Address"
                placeholder="Enter your email address"
                value={email}
+               onChange={handleEmail}
             />
             <InputControl 
                label="Mobile Number"
                placeholder="Enter your phone number"
                value={phone}
+               onChange={handlePhone}
             />
          </div>
          <div className="row">
@@ -96,11 +101,13 @@ const Editor = (props) => {
                label="Linkedin Link"
                placeholder="Enter your linkedin profile link"
                value={linkedin}
+               onChange={handleLinkedin}
             />
             <InputControl 
                label="Github Link"
                placeholder="Enter your github profile link"
                value={github}
+               onChange={handleGithub}
             />
          </div>
 
@@ -303,7 +310,7 @@ const Editor = (props) => {
             return projectBody;
          case sections.education:
             return eduBody;
-         case sections.techno:
+         case sections.details:
             return details;
             default: return null;
       }
