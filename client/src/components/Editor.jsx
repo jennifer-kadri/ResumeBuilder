@@ -20,15 +20,6 @@ const required = (value) => {
 const Editor = (props) => {
    const sections = props.sections
 
-   const [firstname, setFirstname] = useState("");
-   const [lastname, setLastname] = useState("");
-   const [email, setEmail] = useState("");
-   const [phone, setPhone] = useState("");
-   const [title, setTitle] = useState("");
-   const [location, setLocation] = useState("");
-   const [linkedin, setLinkedin] = useState("");
-   const [github, setGithub] = useState("");
-
    const [activeSectionKey, setActiveSectionKey] = useState(
       Object.keys(sections)[0]
     );
@@ -36,41 +27,6 @@ const Editor = (props) => {
    const handleSubmit = () => {
       console.log("it works");
    }
-
-   /** PROJECT DATA **/
-   const projectBody = (
-      <div className="detail">
-         <h4>Projects Details</h4>
-         <div className="row">
-            <InputControl 
-               label="Title"
-               placeholder="Enter title eg. Chat Application"
-            />
-            <InputControl 
-               label="Overview"
-               placeholder="Enter basic overview of project"
-            />
-         </div>
-         <div className="row">
-            <InputControl 
-               label="Deployed Link"
-               placeholder="Enter deployment link if existing"
-            />
-            <InputControl 
-               label="Location"
-               placeholder="Enter Github link of project"
-            />
-         </div>
-
-         <div className="column">
-            <label>Enter project description</label>
-            <InputControl placeholder="Line 1" />
-            <InputControl placeholder="Line 2" />
-            <InputControl placeholder="Line 3" />
-            <InputControl placeholder="Line 4" />
-         </div>
-      </div>
-   )
 
    /** EDUCATION DATA **/
    const eduBody = (
