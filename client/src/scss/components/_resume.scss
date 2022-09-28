@@ -108,6 +108,17 @@
                }
             }
 
+            .skills, .interests {
+               max-width: 200px;
+               flex-wrap: wrap;
+               row-gap: 10px;
+               gap: 4px;
+               display: flex;
+               flex-direction: row;
+               border-bottom: 1px dotted lightgray;
+               padding-bottom: 10px;
+            }
+
             .title {
                font-weight: 500;
                font-size: 1rem;
