@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import InputControl from '../InputControl';
+import React, { useState } from "react";
+import ResumeService from "../Axios/resume.service";
+import InputControl from "../InputControl";
 
 export const InfoBody = (props) => {
 
@@ -11,6 +12,11 @@ export const InfoBody = (props) => {
    const [location, setLocation] = useState("");
    const [linkedin, setLinkedin] = useState("");
    const [github, setGithub] = useState("");
+
+   const [message, setMessage] = useState("");
+   const [successful, setSuccessful] = useState(false);
+   const [errorMessage, setErrorMessage] = useState(false);
+
 
    const handleFirstname = (event) => {
       setFirstname(event.target.value);
@@ -44,9 +50,30 @@ export const InfoBody = (props) => {
       setGithub(event.target.value);
    }
 
-   const handleSubmit = () => {
-      console.log("it works");
-   }
+   const handleSubmit = (event) => {
+     event.preventDefault();
+
+     setMessage("");
+     setSuccessful(false);
+
+     if (!errorMessage) {
+        ResumeService.create(firstname, lastname, email, phone, title, location, linkedin, github).then(
+           (response) => {
+              console.log(response.data.message);
+              setMessage(response.data.message);
+              setSuccessful(true);
+           },
+           (error) => {
+              const resMessage = (
+                 error.response && error.response.data && error.response.data.message
+              ) || error.message || error.toString();
+
+              setMessage(resMessage);
+              setSuccessful(false);
+           }
+        );
+     }
+  };
 
    return (
 
@@ -115,6 +142,9 @@ export const InfoBody = (props) => {
             <InputControl placeholder="Line 2" />
             <InputControl placeholder="Line 3" />
          </div>
+
+         <button onClick={handleSubmit}>Save</button>
+
       </div>
    )
 }

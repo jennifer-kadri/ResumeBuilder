@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
 import { ArrowDown } from "react-feather";
-import Editor from "../components/Editor";
 import ReactToPrint from "react-to-print";
+import Editor from "../components/Editor";
+import Resume from "../components/Resume";
 
 const Create = () => {
-   const colors = ["239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
+   const colors = ["#60b1e0", "#d179da", "#f3b1c7", "#fc6565", "#ed8936"];
 
    const sections = {
       basicInfo: "Infos",
@@ -77,7 +78,17 @@ const Create = () => {
             />
          </div>
          <div className="main">
-            <Editor sections={sections} information={resumeInformation} setInformation={setResumeInformation} />
+            <Editor 
+               sections={sections} 
+               information={resumeInformation} 
+               setInformation={setResumeInformation} 
+               />
+            <Resume
+               ref={resumeRef}
+               sections={sections}
+               information={resumeInformation}
+               activeColor={activeColor}
+            />
          </div>
       </div>
   )

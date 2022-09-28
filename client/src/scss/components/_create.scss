@@ -92,15 +92,9 @@
    width: 100%;
    max-width: 750px;
    transition: $transition-slow;
-
-   @media screen and (min-width: 600px) {
-      // width: 80%;
-   }
-
-   @media screen and (min-width: 800px) {
-      // max-width: 750px;
-   }
+   
    .editor {
+      margin-bottom: 2rem;
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -126,10 +120,10 @@
             font-size: 1.1rem;
             white-space: nowrap;
             transition: $transition-slow;
-            cursor: pointer;
             text-decoration: underline;
             text-decoration-color: $light-blue;
             text-decoration-thickness: 3px;
+            cursor: pointer;
             
             @media only screen and (max-width: 600px) {
                font-size: 1rem;
