@@ -76,7 +76,7 @@ const Resume = forwardRef((props, ref) => {
               )}
               {item.location ? (
                 <p className="date">
-                  <MapPin /> Remote
+                  <MapPin />{item.location}
                 </p>
               ) : (
                 <span />
@@ -175,7 +175,7 @@ const Resume = forwardRef((props, ref) => {
                 <span />
               )}
               {item.college ? (
-                <p className="subTitle">Some college name</p>
+                <p className="subTitle">{item.college}</p>
               ) : (
                 <span />
               )}
@@ -204,7 +204,38 @@ const Resume = forwardRef((props, ref) => {
       >
         <div className="sectionTitle">{info.extraDetails?.sectionTitle}</div>
         <div className="content">
-          <p className="overview">{info.extraDetails?.detail}</p>
+            <div className="item">
+               {info.extraDetails?.detail.skillOne ? (
+                  <p className="title">{info.extraDetails?.detail.skillOne}</p>
+                  ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.skillTwo ? (
+                  <p className="title">{info.extraDetails?.detail.skillTwo}</p>
+               ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.skillThree ? (
+                  <p className="title">{info.extraDetails?.detail.skillThree}</p>
+               ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.interestOne ? (
+                  <p className="title">{info.extraDetails?.detail.interestOne}</p>
+               ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.interestTwo ? (
+                  <p className="title">{info.extraDetails?.detail.interestTwo}</p>
+               ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.interestThree ? (
+                  <p className="title">{info.extraDetails?.detail.interestThree}</p>
+               ) : (
+                  <span />
+               )}
+            </div>
         </div>
       </div>
     ),
@@ -239,8 +270,8 @@ const Resume = forwardRef((props, ref) => {
 
   useEffect(() => {
     setColumns([
-      [sections.project, sections.education],
-      [sections.workExp, sections.extraDetails],
+      [sections.workExp, sections.education],
+      [sections.project,  sections.extraDetails],
     ]);
   }, []);
 

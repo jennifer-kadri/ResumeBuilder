@@ -12,7 +12,7 @@ const Create = () => {
       workExp: "Work",
       project: "Projects",
       education: "Education",
-      extraDetails: "Details",
+      extraDetails: "Extra details",
    };
 
    const resumeRef = useRef();
@@ -42,7 +42,7 @@ const Create = () => {
       [sections.extraDetails]: {
         id: sections.extraDetails,
         sectionTitle: sections.extraDetails,
-        points: [],
+        detail: {},
       },
    });
 
