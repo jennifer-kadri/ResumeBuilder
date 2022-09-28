@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
 import InputControl from "./InputControl";
-import { InfoBody } from "./Content/Infos";
-import { WorkExpBody } from "./Content/WorkExp";
-import { ProjectBody } from "./Content/Projects";
-import { EduBody } from "./Content/Education";
-import { ExtraDetails } from "./Content/ExtraDetails";
 import { X } from "react-feather";
 
 const required = (value) => {
@@ -375,7 +370,7 @@ const Editor = (props) => {
         case sections.education:
           return educationBody;
         case sections.extraDetails:
-          return extraDetailBody;
+          return extraDetailsBody;
         default:
           return null;
       }
