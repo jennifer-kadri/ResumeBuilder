@@ -26,6 +26,7 @@ const Resume = forwardRef((props, ref) => {
     extraDetails: information[sections.extraDetails],
   };
 
+  /** FORMAT DATE TO DAY/MONTH/YEAR */
   const getFormattedDate = (value) => {
     if (!value) return "";
     const date = new Date(value);
@@ -44,7 +45,7 @@ const Resume = forwardRef((props, ref) => {
           info.workExp?.sectionTitle ? "" : "hidden"
         }`}
       >
-        <div className="sectionTitle">{info.workExp.sectionTitle}</div>
+        <div className="sectionTitle">Work Experience</div>
         <div className="content">
           {info.workExp?.details?.map((item) => (
             <div className="item" key={item.title}>
@@ -204,6 +205,9 @@ const Resume = forwardRef((props, ref) => {
       >
         <div className="sectionTitle">{info.extraDetails?.sectionTitle}</div>
         <div className="content">
+            <div className="the-title">
+               <p className="title">Skills / Languages</p>
+            </div>
             <div className="item skills">
                {info.extraDetails?.detail.skillOne ? (
                   <p className="overview">{info.extraDetails?.detail.skillOne},</p>
@@ -235,6 +239,9 @@ const Resume = forwardRef((props, ref) => {
                ) : (
                   <span />
                )}
+            </div>
+            <div className="the-title">
+               <p className="title">Interests / Hobbies</p>
             </div>
             <div className="item interests">
                {info.extraDetails?.detail.interestOne ? (

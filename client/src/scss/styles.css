@@ -848,7 +848,7 @@ li {
   gap: 20px;
 }
 #resume .container .section .sectionTitle {
-  padding: 5px;
+  padding: 5px 0;
   border-bottom: 2px solid transparent;
   font-weight: 500;
   font-size: 1.6rem;
@@ -863,6 +863,12 @@ li {
   flex-direction: column;
   gap: 10px;
   padding: 10px 0;
+}
+#resume .container .section .content .the-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 10px;
 }
 #resume .container .section .content .item {
   border-bottom: 1px dotted lightgray;

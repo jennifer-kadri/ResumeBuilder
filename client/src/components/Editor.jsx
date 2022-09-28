@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ResumeService from "./Axios/resume.service";
 import InputControl from "./InputControl";
 import { X } from "react-feather";
 
@@ -17,24 +18,24 @@ const Editor = (props) => {
      sections[Object.keys(sections)[0]]
    );
    const [values, setValues] = useState({
-     name: activeInformation?.detail?.name || "",
-     title: activeInformation?.detail?.title || "",
-     linkedin: activeInformation?.detail?.linkedin || "",
-     github: activeInformation?.detail?.github || "",
-     phone: activeInformation?.detail?.phone || "",
-     email: activeInformation?.detail?.email || "",
-     skillOne: activeInformation?.detail?.skillOne || "",
-     skillTwo: activeInformation?.detail?.skillTwo || "",
-     skillThree: activeInformation?.detail?.skillThree || "",
-     skillFour: activeInformation?.detail?.skillFour || "",
-     skillFive: activeInformation?.detail?.skillFive || "",
-     skillSix: activeInformation?.detail?.skillSix || "",
-     interestOne: activeInformation?.detail?.interestOne || "",
-     interestTwo: activeInformation?.detail?.interestTwo || "",
-     interestThree: activeInformation?.detail?.interestThree || "",
-     interestFour: activeInformation?.detail?.interestFour || "",
-     interestFive: activeInformation?.detail?.interestFive || "",
-     interestSix: activeInformation?.detail?.interestSix || "",
+     name: "",
+     title: "",
+     linkedin: "",
+     github: "",
+     phone: "",
+     email: "",
+     skillOne: "",
+     skillTwo: "",
+     skillThree: "",
+     skillFour: "",
+     skillFive: "",
+     skillSix: "",
+     interestOne: "",
+     interestTwo: "",
+     interestThree: "",
+     interestFour: "",
+     interestFive: "",
+     interestSix: "",
    });
  
    const handlePointUpdate = (value, index) => {
@@ -426,123 +427,20 @@ const Editor = (props) => {
       }
     };
   
-    const handleSubmission = () => {
-      switch (sections[activeSectionKey]) {
-        case sections.basicInfo: {
-          const tempDetail = {
-            name: values.name,
-            title: values.title,
-            linkedin: values.linkedin,
-            github: values.github,
-            email: values.email,
-            phone: values.phone,
-          };
+    const handleSubmission = (event) => {
+        event.preventDefault();
   
-          props.setInformation((prev) => ({
-            ...prev,
-            [sections.basicInfo]: {
-              ...prev[sections.basicInfo],
-              detail: tempDetail,
-              sectionTitle,
-            },
-          }));
-          break;
+           ResumeService.register(firstname, lastname, email, password, confirmPassword).then(
+              (response) => {
+                 console.log(response.data.message);
+              },
+              (error) => {
+                 const resMessage = (
+                    error.response && error.response.data && error.response.data.message
+                 ) || error.message || error.toString();
+              }
+           );
         }
-        case sections.workExp: {
-          const tempDetail = {
-            certificationLink: values.certificationLink,
-            title: values.title,
-            startDate: values.startDate,
-            endDate: values.endDate,
-            companyName: values.companyName,
-            location: values.location,
-            points: values.points,
-          };
-
-          const tempDetails = [...information[sections.workExp]?.details];
-          tempDetails[activeDetailIndex] = tempDetail;
-  
-          props.setInformation((prev) => ({
-            ...prev,
-            [sections.workExp]: {
-              ...prev[sections.workExp],
-              details: tempDetails,
-              sectionTitle,
-            },
-          }));
-          break;
-        }
-        case sections.project: {
-          const tempDetail = {
-            link: values.link,
-            title: values.title,
-            overview: values.overview,
-            github: values.github,
-            points: values.points,
-          };
-
-          const tempDetails = [...information[sections.project]?.details];
-          tempDetails[activeDetailIndex] = tempDetail;
-  
-          props.setInformation((prev) => ({
-            ...prev,
-            [sections.project]: {
-              ...prev[sections.project],
-              details: tempDetails,
-              sectionTitle,
-            },
-          }));
-          break;
-        }
-        case sections.education: {
-          const tempDetail = {
-            title: values.title,
-            college: values.college,
-            startDate: values.startDate,
-            endDate: values.endDate,
-          };
-
-          const tempDetails = [...information[sections.education]?.details];
-          tempDetails[activeDetailIndex] = tempDetail;
-  
-          props.setInformation((prev) => ({
-            ...prev,
-            [sections.education]: {
-              ...prev[sections.education],
-              details: tempDetails,
-              sectionTitle,
-            },
-          }));
-          break;
-        }
-
-        case sections.extraDetails: {
-         const tempDetail = {
-            skillOne: values.skillOne,
-            skillTwo: values.skillTwo,
-            skillThree: values.skillThree,
-            skillFour: values.skillFour,
-            skillFive: values.skillFive,
-            skillSix: values.skillSix,
-            interestOne: values.interestOne,
-            interestTwo: values.interestTwo,
-            interestThree: values.interestThree,
-            interestFour: values.interestFour,
-            interestFive: values.interestFive,
-            interestSix: values.interestSix,
-         };
- 
-         props.setInformation((prev) => ({
-           ...prev,
-           [sections.extraDetails]: {
-             ...prev[sections.extraDetails],
-             detail: tempDetail,
-             sectionTitle,
-           },
-         }));
-         break;
-       }
-      }
     };
   
     const handleAddNew = () => {
@@ -579,89 +477,89 @@ const Editor = (props) => {
       setActiveDetailIndex((prev) => (prev === index ? 0 : prev - 1));
     };
   
-    useEffect(() => {
-      const activeInfo = information[sections[activeSectionKey]];
-      setActiveInformation(activeInfo);
-      setSectionTitle(sections[activeSectionKey]);
-      setActiveDetailIndex(0);
-      setValues({
-        name: activeInfo?.detail?.name || "",
-        overview: activeInfo?.details
-          ? activeInfo.details[0]?.overview || ""
-          : "",
-        link: activeInfo?.details ? activeInfo.details[0]?.link || "" : "",
-        certificationLink: activeInfo?.details
-          ? activeInfo.details[0]?.certificationLink || ""
-          : "",
-        companyName: activeInfo?.details
-          ? activeInfo.details[0]?.companyName || ""
-          : "",
-        college: activeInfo?.details
-          ? activeInfo.details[0]?.college || ""
-          : "",
-        location: activeInfo?.details
-          ? activeInfo.details[0]?.location || ""
-          : "",
-        startDate: activeInfo?.details
-          ? activeInfo.details[0]?.startDate || ""
-          : "",
-        endDate: activeInfo?.details ? activeInfo.details[0]?.endDate || "" : "",
-        points: activeInfo?.details
-          ? activeInfo.details[0]?.points
-            ? [...activeInfo.details[0]?.points]
-            : ""
-          : activeInfo?.points
-          ? [...activeInfo.points]
-          : "",
-        title: activeInfo?.details
-          ? activeInfo.details[0]?.title || ""
-          : activeInfo?.detail?.title || "",
-        linkedin: activeInfo?.detail?.linkedin || "",
-        github: activeInfo?.details
-          ? activeInfo.details[0]?.github || ""
-          : activeInfo?.detail?.github || "",
-        phone: activeInfo?.detail?.phone || "",
-        email: activeInfo?.detail?.email || "",
-        skillOne: activeInfo?.detail?.skillOne || "",
-        skillTwo: activeInfo?.detail?.skillTwo || "",
-        skillThree: activeInfo?.detail?.skillThree || "",
-        skillFour: activeInfo?.detail?.skillFour || "",
-        skillFive: activeInfo?.detail?.skillFive || "",
-        skillSix: activeInfo?.detail?.skillSix || "",
-        interestOne: activeInfo?.detail?.interestOne || "",
-        interestTwo: activeInfo?.detail?.interestTwo || "",
-        interestThree: activeInfo?.detail?.interestThree || "",
-        interestFour: activeInfo?.detail?.interestFour || "",
-        interestFive: activeInfo?.detail?.interestFive || "",
-        interestSix: activeInfo?.detail?.interestSix || "",
-      });
-    }, [activeSectionKey]);
+    // useEffect(() => {
+    //   const activeInfo = information[sections[activeSectionKey]];
+    //   setActiveInformation(activeInfo);
+    //   setSectionTitle(sections[activeSectionKey]);
+    //   setActiveDetailIndex(0);
+    //   setValues({
+    //     name: activeInfo?.detail?.name || "",
+    //     overview: activeInfo?.details
+    //       ? activeInfo.details[0]?.overview || ""
+    //       : "",
+    //     link: activeInfo?.details ? activeInfo.details[0]?.link || "" : "",
+    //     certificationLink: activeInfo?.details
+    //       ? activeInfo.details[0]?.certificationLink || ""
+    //       : "",
+    //     companyName: activeInfo?.details
+    //       ? activeInfo.details[0]?.companyName || ""
+    //       : "",
+    //     college: activeInfo?.details
+    //       ? activeInfo.details[0]?.college || ""
+    //       : "",
+    //     location: activeInfo?.details
+    //       ? activeInfo.details[0]?.location || ""
+    //       : "",
+    //     startDate: activeInfo?.details
+    //       ? activeInfo.details[0]?.startDate || ""
+    //       : "",
+    //     endDate: activeInfo?.details ? activeInfo.details[0]?.endDate || "" : "",
+    //     points: activeInfo?.details
+    //       ? activeInfo.details[0]?.points
+    //         ? [...activeInfo.details[0]?.points]
+    //         : ""
+    //       : activeInfo?.points
+    //       ? [...activeInfo.points]
+    //       : "",
+    //     title: activeInfo?.details
+    //       ? activeInfo.details[0]?.title || ""
+    //       : activeInfo?.detail?.title || "",
+    //     linkedin: activeInfo?.detail?.linkedin || "",
+    //     github: activeInfo?.details
+    //       ? activeInfo.details[0]?.github || ""
+    //       : activeInfo?.detail?.github || "",
+    //     phone: activeInfo?.detail?.phone || "",
+    //     email: activeInfo?.detail?.email || "",
+    //     skillOne: activeInfo?.detail?.skillOne || "",
+    //     skillTwo: activeInfo?.detail?.skillTwo || "",
+    //     skillThree: activeInfo?.detail?.skillThree || "",
+    //     skillFour: activeInfo?.detail?.skillFour || "",
+    //     skillFive: activeInfo?.detail?.skillFive || "",
+    //     skillSix: activeInfo?.detail?.skillSix || "",
+    //     interestOne: activeInfo?.detail?.interestOne || "",
+    //     interestTwo: activeInfo?.detail?.interestTwo || "",
+    //     interestThree: activeInfo?.detail?.interestThree || "",
+    //     interestFour: activeInfo?.detail?.interestFour || "",
+    //     interestFive: activeInfo?.detail?.interestFive || "",
+    //     interestSix: activeInfo?.detail?.interestSix || "",
+    //   });
+    // }, [activeSectionKey]);
   
-    useEffect(() => {
-      setActiveInformation(information[sections[activeSectionKey]]);
-    }, [information]);
+    // useEffect(() => {
+    //   setActiveInformation(information[sections[activeSectionKey]]);
+    // }, [information]);
   
-    useEffect(() => {
-      const details = activeInformation?.details;
-      if (!details) return;
+    // useEffect(() => {
+    //   const details = activeInformation?.details;
+    //   if (!details) return;
   
-      const activeInfo = information[sections[activeSectionKey]];
-      setValues({
-        overview: activeInfo.details[activeDetailIndex]?.overview || "",
-        link: activeInfo.details[activeDetailIndex]?.link || "",
-        certificationLink:
-          activeInfo.details[activeDetailIndex]?.certificationLink || "",
-        companyName: activeInfo.details[activeDetailIndex]?.companyName || "",
-        location: activeInfo.details[activeDetailIndex]?.location || "",
-        startDate: activeInfo.details[activeDetailIndex]?.startDate || "",
-        endDate: activeInfo.details[activeDetailIndex]?.endDate || "",
-        points: activeInfo.details[activeDetailIndex]?.points || "",
-        title: activeInfo.details[activeDetailIndex]?.title || "",
-        linkedin: activeInfo.details[activeDetailIndex]?.linkedin || "",
-        github: activeInfo.details[activeDetailIndex]?.github || "",
-        college: activeInfo.details[activeDetailIndex]?.college || "",
-      });
-    }, [activeDetailIndex]);  
+    //   const activeInfo = information[sections[activeSectionKey]];
+    //   setValues({
+    //     overview: activeInfo.details[activeDetailIndex]?.overview || "",
+    //     link: activeInfo.details[activeDetailIndex]?.link || "",
+    //     certificationLink:
+    //       activeInfo.details[activeDetailIndex]?.certificationLink || "",
+    //     companyName: activeInfo.details[activeDetailIndex]?.companyName || "",
+    //     location: activeInfo.details[activeDetailIndex]?.location || "",
+    //     startDate: activeInfo.details[activeDetailIndex]?.startDate || "",
+    //     endDate: activeInfo.details[activeDetailIndex]?.endDate || "",
+    //     points: activeInfo.details[activeDetailIndex]?.points || "",
+    //     title: activeInfo.details[activeDetailIndex]?.title || "",
+    //     linkedin: activeInfo.details[activeDetailIndex]?.linkedin || "",
+    //     github: activeInfo.details[activeDetailIndex]?.github || "",
+    //     college: activeInfo.details[activeDetailIndex]?.college || "",
+    //   });
+    // }, [activeDetailIndex]);  
 
   return (
     <div className="editor">
