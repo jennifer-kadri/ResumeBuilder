@@ -206,64 +206,64 @@ const Resume = forwardRef((props, ref) => {
         <div className="content">
             <div className="item skills">
                {info.extraDetails?.detail.skillOne ? (
-                  <p className="title">{info.extraDetails?.detail.skillOne}</p>
+                  <p className="overview">{info.extraDetails?.detail.skillOne},</p>
                   ) : (
                   <span />
                )}
                {info.extraDetails?.detail.skillTwo ? (
-                  <p className="title">{info.extraDetails?.detail.skillTwo}</p>
+                  <p className="overview">{info.extraDetails?.detail.skillTwo},</p>
                ) : (
                   <span />
                )}
                {info.extraDetails?.detail.skillThree ? (
-                  <p className="title">{info.extraDetails?.detail.skillThree}</p>
+                  <p className="overview">{info.extraDetails?.detail.skillThree},</p>
                ) : (
                   <span />
                )}
                {info.extraDetails?.detail.skillFour ? (
-                  <p className="title">{info.extraDetails?.detail.skillFour}</p>
+                  <p className="overview">{info.extraDetails?.detail.skillFour},</p>
                   ) : (
                   <span />
                )}
                {info.extraDetails?.detail.skillFive ? (
-                  <p className="title">{info.extraDetails?.detail.skillFive}</p>
+                  <p className="overview">{info.extraDetails?.detail.skillFive},</p>
                ) : (
                   <span />
                )}
                {info.extraDetails?.detail.skillSix ? (
-                  <p className="title">{info.extraDetails?.detail.skillSix}</p>
+                  <p className="overview">{info.extraDetails?.detail.skillSix}</p>
                ) : (
                   <span />
                )}
             </div>
             <div className="item interests">
                {info.extraDetails?.detail.interestOne ? (
-                  <p className="title">{info.extraDetails?.detail.interestOne}</p>
+                  <p className="overview">{info.extraDetails?.detail.interestOne},</p>
                ) : (
                   <span />
                )}
                {info.extraDetails?.detail.interestTwo ? (
-                  <p className="title">{info.extraDetails?.detail.interestTwo}</p>
+                  <p className="overview">{info.extraDetails?.detail.interestTwo},</p>
                ) : (
                   <span />
                )}
                {info.extraDetails?.detail.interestThree ? (
-                  <p className="title">{info.extraDetails?.detail.interestThree}</p>
+                  <p className="overview">{info.extraDetails?.detail.interestThree},</p>
                ) : (
                   <span />
                )}
                {info.extraDetails?.detail.interestFour ? (
-                  <p className="title">{info.extraDetails?.detail.interestFour}</p>
+                  <p className="overview">{info.extraDetails?.detail.interestFour},</p>
                ) : (
                   <span />
                )}
                {info.extraDetails?.detail.interestFive ? (
-                  <p className="title">{info.extraDetails?.detail.interestFive}</p>
+                  <p className="overview">{info.extraDetails?.detail.interestFive},</p>
                ) : (
                   <span />
                )}
                {info.extraDetails?.detail.interestSix ? (
-                  <p className="title">{info.extraDetails?.detail.interestSix}</p>
+                  <p className="overview">{info.extraDetails?.detail.interestSix}</p>
                ) : (
                   <span />
                )}
