@@ -19,13 +19,11 @@ const Resume = forwardRef((props, ref) => {
   const [target, setTarget] = useState("");
 
   const info = {
+    basicInfo: information[sections.basicInfo],
     workExp: information[sections.workExp],
     project: information[sections.project],
-    achievement: information[sections.achievement],
     education: information[sections.education],
-    basicInfo: information[sections.basicInfo],
-    summary: information[sections.summary],
-    other: information[sections.other],
+    extraDetails: information[sections.extraDetails],
   };
 
   const getFormattedDate = (value) => {
@@ -194,63 +192,19 @@ const Resume = forwardRef((props, ref) => {
         </div>
       </div>
     ),
-    [sections.achievement]: (
+    [sections.extraDetails]: (
       <div
-        key={"achievement"}
+        key={"extraDetails"}
         draggable
-        onDragOver={() => setTarget(info.achievement?.id)}
-        onDragEnd={() => setSource(info.achievement?.id)}
+        onDragOver={() => setTarget(info.extraDetails?.id)}
+        onDragEnd={() => setSource(info.extraDetails?.id)}
         className={`section ${
-          info.achievement?.sectionTitle ? "" : "hidden"
+          info.extraDetails?.sectionTitle ? "" : "hidden"
         }`}
       >
-        <div className="sectionTitle">
-          {info.achievement?.sectionTitle}
-        </div>
+        <div className="sectionTitle">{info.extraDetails?.sectionTitle}</div>
         <div className="content">
-          {info.achievement?.points?.length > 0 ? (
-            <ul className="numbered">
-              {info.achievement?.points?.map((elem, index) => (
-                <li className="point" key={elem + index}>
-                  {elem}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <span />
-          )}
-        </div>
-      </div>
-    ),
-    [sections.summary]: (
-      <div
-        key={"summary"}
-        draggable
-        onDragOver={() => setTarget(info.summary?.id)}
-        onDragEnd={() => setSource(info.summary?.id)}
-        className={`section ${
-          info.summary?.sectionTitle ? "" : "hidden"
-        }`}
-      >
-        <div className="sectionTitle">{info.summary?.sectionTitle}</div>
-        <div className="content">
-          <p className="overview">{info.summary?.detail}</p>
-        </div>
-      </div>
-    ),
-    [sections.other]: (
-      <div
-        key={"other"}
-        draggable
-        onDragOver={() => setTarget(info.other?.id)}
-        onDragEnd={() => setSource(info.other?.id)}
-        className={`section ${
-          info.other?.sectionTitle ? "" : "hidden"
-        }`}
-      >
-        <div className="sectionTitle">{info.other?.sectionTitle}</div>
-        <div className="content">
-          <p className="overview">{info?.other?.detail}</p>
+          <p className="overview">{info.extraDetails?.detail}</p>
         </div>
       </div>
     ),
@@ -285,8 +239,8 @@ const Resume = forwardRef((props, ref) => {
 
   useEffect(() => {
     setColumns([
-      [sections.project, sections.education, sections.summary],
-      [sections.workExp, sections.achievement, sections.other],
+      [sections.project, sections.education],
+      [sections.workExp, sections.extraDetails],
     ]);
   }, []);
 

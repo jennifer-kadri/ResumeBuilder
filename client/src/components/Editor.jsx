@@ -2,16 +2,6 @@ import React, { useState, useEffect } from "react";
 import InputControl from "./InputControl";
 import { X } from "react-feather";
 
-const required = (value) => {
-   if (!value) {
-      return (
-         <div className="error">
-            This field is required.
-         </div>
-      );
-   };
-};
-
 const Editor = (props) => {
    const sections = props.sections;
    const information = props.information;
@@ -192,8 +182,8 @@ const Editor = (props) => {
         <div className="row">
           <InputControl
             label="Title"
-            value={values.title}
             placeholder="Enter title eg. Chat app"
+            value={values.title}
             onChange={(event) =>
               setValues((prev) => ({ ...prev, title: event.target.value }))
             }
@@ -201,8 +191,8 @@ const Editor = (props) => {
         </div>
         <InputControl
           label="Overview"
-          value={values.overview}
           placeholder="Enter basic overview of project"
+          value={values.overview}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, overview: event.target.value }))
           }
@@ -210,16 +200,16 @@ const Editor = (props) => {
         <div className="row">
           <InputControl
             label="Deployed Link"
-            value={values.link}
             placeholder="Enter deployed link of project"
+            value={values.link}
             onChange={(event) =>
               setValues((prev) => ({ ...prev, link: event.target.value }))
             }
           />
           <InputControl
             label="Github Link"
-            value={values.github}
             placeholder="Enter github link of project"
+            value={values.github}
             onChange={(event) =>
               setValues((prev) => ({ ...prev, github: event.target.value }))
             }
@@ -257,8 +247,8 @@ const Editor = (props) => {
         <div className="row">
           <InputControl
             label="Title"
-            value={values.title}
             placeholder="Enter title eg. B-tech"
+            value={values.title}
             onChange={(event) =>
               setValues((prev) => ({ ...prev, title: event.target.value }))
             }
@@ -266,8 +256,8 @@ const Editor = (props) => {
         </div>
         <InputControl
           label="College/School Name"
-          value={values.college}
           placeholder="Enter name of your college/school"
+          value={values.college}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, college: event.target.value }))
           }
@@ -303,28 +293,52 @@ const Editor = (props) => {
             <InputControl 
                label="Skill 1"
                placeholder="Enter your skill"
+               value={values.skill1}
+               onChange={(event) =>
+                 setValues((prev) => ({ ...prev, skill1: event.target.value }))
+               }
             />
             <InputControl 
                label="Skill 2"
                placeholder="Enter your skill"
+               value={values.skill2}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, skill2: event.target.value }))
+                }
             />
             <InputControl 
                label="Skill 3"
                placeholder="Enter your skill"
+               value={values.skill3}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, skill3: event.target.value }))
+                }
             />
          </div>
          <div className="row">
             <InputControl 
                label="Skill 4"
                placeholder="Enter your skill"
+               value={values.skill4}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, skill4: event.target.value }))
+                }
             />
             <InputControl 
                label="Skill 5"
                placeholder="Enter your skill"
+               value={values.skill5}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, skill5: event.target.value }))
+                }
             />
             <InputControl 
                label="Skill 6"
                placeholder="Enter your skill"
+               value={values.skill6}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, skill6: event.target.value }))
+                }
             />
          </div>
          <h4>Interests / Hobbies </h4>
@@ -332,28 +346,52 @@ const Editor = (props) => {
             <InputControl 
                label="Interest 1"
                placeholder="Enter your interest"
+               value={values.interest1}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, interest1: event.target.value }))
+                }
             />
             <InputControl 
                label="Interest 2"
                placeholder="Enter your interest"
+               value={values.interest2}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, interest2: event.target.value }))
+                }
             />
             <InputControl 
                label="Interest 3"
                placeholder="Enter your interest"
+               value={values.interest3}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, interest3: event.target.value }))
+                }
             />
          </div>
          <div className="row">
             <InputControl 
                label="Interest 4"
                placeholder="Enter your interest"
+               value={values.interest4}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, interest4: event.target.value }))
+                }
             />
             <InputControl 
                label="Interest 5"
                placeholder="Enter your interest"
+               value={values.interest5}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, interest5: event.target.value }))
+                }
             />
             <InputControl 
                label="Interest 6"
                placeholder="Enter your interest"
+               value={values.interest6}
+               onChange={(event) =>
+                  setValues((prev) => ({ ...prev, interest6: event.target.value }))
+                }
             />
          </div>
       </div>
@@ -361,7 +399,7 @@ const Editor = (props) => {
 
     const generateBody = () => {
       switch (sections[activeSectionKey]) {
-        case sections.info:
+        case sections.basicInfo:
           return infoBody;
         case sections.workExp:
           return workExpBody;
@@ -378,7 +416,7 @@ const Editor = (props) => {
   
     const handleSubmission = () => {
       switch (sections[activeSectionKey]) {
-        case sections.info: {
+        case sections.basicInfo: {
           const tempDetail = {
             name: values.name,
             title: values.title,
@@ -390,8 +428,8 @@ const Editor = (props) => {
   
           props.setInformation((prev) => ({
             ...prev,
-            [sections.info]: {
-              ...prev[sections.info],
+            [sections.basicInfo]: {
+              ...prev[sections.basicInfo],
               detail: tempDetail,
               sectionTitle,
             },
@@ -408,6 +446,7 @@ const Editor = (props) => {
             location: values.location,
             points: values.points,
           };
+
           const tempDetails = [...information[sections.workExp]?.details];
           tempDetails[activeDetailIndex] = tempDetail;
   
@@ -429,6 +468,7 @@ const Editor = (props) => {
             github: values.github,
             points: values.points,
           };
+
           const tempDetails = [...information[sections.project]?.details];
           tempDetails[activeDetailIndex] = tempDetail;
   
@@ -449,6 +489,7 @@ const Editor = (props) => {
             startDate: values.startDate,
             endDate: values.endDate,
           };
+
           const tempDetails = [...information[sections.education]?.details];
           tempDetails[activeDetailIndex] = tempDetail;
   
@@ -462,39 +503,29 @@ const Editor = (props) => {
           }));
           break;
         }
-        case sections.achievement: {
-          const tempPoints = values.points;
-  
+        case sections.extraDetails: {
+         const tempDetail = {
+            skill1: values.skill1,
+            skill2: values.skill2,
+            skill3: values.skill3,
+            skill4: values.skill4,
+            skill5: values.skill5,
+            skill6: values.skill6,
+            interest1: values.interest1,
+            interest2: values.interest2,
+            interest3: values.interest3,
+            interest4: values.interest4,
+            interest5: values.interest5,
+            interest6: values.interest6,
+         };
+
+         const tempDetails = [...information[sections.extraDetails]?.details];
+         tempDetails[activeDetailIndex] = tempDetail;
+
           props.setInformation((prev) => ({
             ...prev,
-            [sections.achievement]: {
-              ...prev[sections.achievement],
-              points: tempPoints,
-              sectionTitle,
-            },
-          }));
-          break;
-        }
-        case sections.summary: {
-          const tempDetail = values.summary;
-  
-          props.setInformation((prev) => ({
-            ...prev,
-            [sections.summary]: {
-              ...prev[sections.summary],
-              detail: tempDetail,
-              sectionTitle,
-            },
-          }));
-          break;
-        }
-        case sections.other: {
-          const tempDetail = values.other;
-  
-          props.setInformation((prev) => ({
-            ...prev,
-            [sections.other]: {
-              ...prev[sections.other],
+            [sections.extraDetails]: {
+              ...prev[sections.extraDetails],
               detail: tempDetail,
               sectionTitle,
             },
@@ -581,8 +612,25 @@ const Editor = (props) => {
           : activeInfo?.detail?.github || "",
         phone: activeInfo?.detail?.phone || "",
         email: activeInfo?.detail?.email || "",
-        summary: typeof activeInfo?.detail !== "object" ? activeInfo.detail : "",
-        other: typeof activeInfo?.detail !== "object" ? activeInfo.detail : "",
+
+        skill1: activeInfo?.details
+        ? activeInfo.details[0]?.skill1 || ""
+        : "",
+        skill2: activeInfo?.details
+        ? activeInfo.details[0]?.skill2 || ""
+        : "",
+        skill3: activeInfo?.details
+        ? activeInfo.details[0]?.skill3 || ""
+        : "",
+        skill4: activeInfo?.details
+        ? activeInfo.details[0]?.skill4 || ""
+        : "",
+        skill5: activeInfo?.details
+        ? activeInfo.details[0]?.skill5 || ""
+        : "",
+        skill6: activeInfo?.details
+        ? activeInfo.details[0]?.skill6 || ""
+        : "",
       });
     }, [activeSectionKey]);
   
@@ -636,21 +684,21 @@ const Editor = (props) => {
 
          <div className="chips">
             {activeInformation?.details
-               ? activeInformation?.details?.map((item, index) => (
+               ? activeInformation?.details?.map((item, i) => (
                   <div
                      className={`chip ${
-                     activeDetailIndex === index ? "active" : ""
+                     activeDetailIndex === i ? "active" : ""
                      }`}
-                     key={item.title + index}
-                     onClick={() => setActiveDetailIndex(index)}
+                     key={item.title + i}
+                     onClick={() => setActiveDetailIndex(i)}
                   >
                      <p>
-                     {sections[activeSectionKey]} {index + 1}
+                     {sections[activeSectionKey]} {i + 1}
                      </p>
                      <X
                      onClick={(event) => {
                         event.stopPropagation();
-                        handleDeleteDetail(index);
+                        handleDeleteDetail(i);
                      }}
                      />
                   </div>

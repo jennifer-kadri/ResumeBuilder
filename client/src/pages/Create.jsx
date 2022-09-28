@@ -8,7 +8,7 @@ const Create = () => {
    const colors = ["#60b1e0", "#d179da", "#f775ab", "#d84040", "#ed8936"];
 
    const sections = {
-      info: "Infos",
+      basicInfo: "Infos",
       workExp: "Work",
       project: "Projects",
       education: "Education",
@@ -19,9 +19,9 @@ const Create = () => {
 
    const [activeColor, setActiveColor] = useState(colors[0]);
    const [resumeInformation, setResumeInformation] = useState({
-      [sections.info]: {
-        id: sections.info,
-        sectionTitle: sections.info,
+      [sections.basicInfo]: {
+        id: sections.basicInfo,
+        sectionTitle: sections.basicInfo,
         detail: {},
       },
       [sections.workExp]: {
