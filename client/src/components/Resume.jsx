@@ -220,6 +220,21 @@ const Resume = forwardRef((props, ref) => {
                ) : (
                   <span />
                )}
+               {info.extraDetails?.detail.skillFour ? (
+                  <p className="title">{info.extraDetails?.detail.skillFour}</p>
+                  ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.skillFive ? (
+                  <p className="title">{info.extraDetails?.detail.skillFive}</p>
+               ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.skillSix ? (
+                  <p className="title">{info.extraDetails?.detail.skillSix}</p>
+               ) : (
+                  <span />
+               )}
                {info.extraDetails?.detail.interestOne ? (
                   <p className="title">{info.extraDetails?.detail.interestOne}</p>
                ) : (
@@ -232,6 +247,21 @@ const Resume = forwardRef((props, ref) => {
                )}
                {info.extraDetails?.detail.interestThree ? (
                   <p className="title">{info.extraDetails?.detail.interestThree}</p>
+               ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.interestFour ? (
+                  <p className="title">{info.extraDetails?.detail.interestFour}</p>
+               ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.interestFive ? (
+                  <p className="title">{info.extraDetails?.detail.interestFive}</p>
+               ) : (
+                  <span />
+               )}
+               {info.extraDetails?.detail.interestSix ? (
+                  <p className="title">{info.extraDetails?.detail.interestSix}</p>
                ) : (
                   <span />
                )}

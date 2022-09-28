@@ -26,9 +26,15 @@ const Editor = (props) => {
      skillOne: activeInformation?.detail?.skillOne || "",
      skillTwo: activeInformation?.detail?.skillTwo || "",
      skillThree: activeInformation?.detail?.skillThree || "",
+     skillFour: activeInformation?.detail?.skillFour || "",
+     skillFive: activeInformation?.detail?.skillFive || "",
+     skillSix: activeInformation?.detail?.skillSix || "",
      interestOne: activeInformation?.detail?.interestOne || "",
      interestTwo: activeInformation?.detail?.interestTwo || "",
      interestThree: activeInformation?.detail?.interestThree || "",
+     interestFour: activeInformation?.detail?.interestFour || "",
+     interestFive: activeInformation?.detail?.interestFive || "",
+     interestSix: activeInformation?.detail?.interestSix || "",
    });
  
    const handlePointUpdate = (value, index) => {
@@ -515,9 +521,15 @@ const Editor = (props) => {
             skillOne: values.skillOne,
             skillTwo: values.skillTwo,
             skillThree: values.skillThree,
+            skillFour: values.skillFour,
+            skillFive: values.skillFive,
+            skillSix: values.skillSix,
             interestOne: values.interestOne,
             interestTwo: values.interestTwo,
             interestThree: values.interestThree,
+            interestFour: values.interestFour,
+            interestFive: values.interestFive,
+            interestSix: values.interestSix,
          };
  
          props.setInformation((prev) => ({
@@ -613,9 +625,15 @@ const Editor = (props) => {
         skillOne: activeInfo?.detail?.skillOne || "",
         skillTwo: activeInfo?.detail?.skillTwo || "",
         skillThree: activeInfo?.detail?.skillThree || "",
+        skillFour: activeInfo?.detail?.skillFour || "",
+        skillFive: activeInfo?.detail?.skillFive || "",
+        skillSix: activeInfo?.detail?.skillSix || "",
         interestOne: activeInfo?.detail?.interestOne || "",
         interestTwo: activeInfo?.detail?.interestTwo || "",
         interestThree: activeInfo?.detail?.interestThree || "",
+        interestFour: activeInfo?.detail?.interestFour || "",
+        interestFive: activeInfo?.detail?.interestFive || "",
+        interestSix: activeInfo?.detail?.interestSix || "",
       });
     }, [activeSectionKey]);
   
