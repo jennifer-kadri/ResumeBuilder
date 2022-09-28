@@ -5,10 +5,10 @@ import Editor from "../components/Editor";
 import Resume from "../components/Resume";
 
 const Create = () => {
-   const colors = ["#60b1e0", "#d179da", "#f3b1c7", "#fc6565", "#ed8936"];
+   const colors = ["#60b1e0", "#d179da", "#f775ab", "#d84040", "#ed8936"];
 
    const sections = {
-      basicInfo: "Infos",
+      info: "Infos",
       workExp: "Work",
       project: "Projects",
       education: "Education",
@@ -19,9 +19,9 @@ const Create = () => {
 
    const [activeColor, setActiveColor] = useState(colors[0]);
    const [resumeInformation, setResumeInformation] = useState({
-      [sections.basicInfo]: {
-        id: sections.basicInfo,
-        sectionTitle: sections.basicInfo,
+      [sections.info]: {
+        id: sections.info,
+        sectionTitle: sections.info,
         detail: {},
       },
       [sections.workExp]: {
