@@ -301,7 +301,68 @@ const Editor = (props) => {
     );
 
    /** EXTRA DETAILS EDITOR */
-   
+   const extraDetailsBody = (
+      <div className="detail">
+         <h4>Skills / Languages</h4>
+         <div className="row">
+            <InputControl 
+               label="Skill 1"
+               placeholder="Enter your skill"
+            />
+            <InputControl 
+               label="Skill 2"
+               placeholder="Enter your skill"
+            />
+            <InputControl 
+               label="Skill 3"
+               placeholder="Enter your skill"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Skill 4"
+               placeholder="Enter your skill"
+            />
+            <InputControl 
+               label="Skill 5"
+               placeholder="Enter your skill"
+            />
+            <InputControl 
+               label="Skill 6"
+               placeholder="Enter your skill"
+            />
+         </div>
+         <h4>Interests / Hobbies </h4>
+         <div className="row">
+            <InputControl 
+               label="Interest 1"
+               placeholder="Enter your interest"
+            />
+            <InputControl 
+               label="Interest 2"
+               placeholder="Enter your interest"
+            />
+            <InputControl 
+               label="Interest 3"
+               placeholder="Enter your interest"
+            />
+         </div>
+         <div className="row">
+            <InputControl 
+               label="Interest 4"
+               placeholder="Enter your interest"
+            />
+            <InputControl 
+               label="Interest 5"
+               placeholder="Enter your interest"
+            />
+            <InputControl 
+               label="Interest 6"
+               placeholder="Enter your interest"
+            />
+         </div>
+      </div>
+   )
 
     const generateBody = () => {
       switch (sections[activeSectionKey]) {
