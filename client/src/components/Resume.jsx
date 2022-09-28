@@ -204,7 +204,7 @@ const Resume = forwardRef((props, ref) => {
       >
         <div className="sectionTitle">{info.extraDetails?.sectionTitle}</div>
         <div className="content">
-            <div className="item">
+            <div className="item skills">
                {info.extraDetails?.detail.skillOne ? (
                   <p className="title">{info.extraDetails?.detail.skillOne}</p>
                   ) : (
@@ -235,6 +235,8 @@ const Resume = forwardRef((props, ref) => {
                ) : (
                   <span />
                )}
+            </div>
+            <div className="item interests">
                {info.extraDetails?.detail.interestOne ? (
                   <p className="title">{info.extraDetails?.detail.interestOne}</p>
                ) : (
