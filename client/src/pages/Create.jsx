@@ -39,9 +39,9 @@ const Create = () => {
         sectionTitle: sections.education,
         details: [],
       },
-      [sections.details]: {
-        id: sections.details,
-        sectionTitle: sections.details,
+      [sections.extraDetails]: {
+        id: sections.extraDetails,
+        sectionTitle: sections.extraDetails,
         points: [],
       },
    });
