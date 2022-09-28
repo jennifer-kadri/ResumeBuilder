@@ -12,7 +12,7 @@ const Create = () => {
       workExp: "Work",
       project: "Projects",
       education: "Education",
-      details: "Details",
+      extraDetails: "Details",
    };
 
    const resumeRef = useRef();
